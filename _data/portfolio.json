@@ -1,0 +1,45 @@
+[
+    {
+        "title": "ShopLocal",
+        "description":
+            "Shop Local is a pet project still in its early stages. It is to be a web application where users search for goods locally.  There will also be an admin side to this where merchants can manage inventory and update business information",
+        "url": "",
+        "tags": ["AngularJS", "Angular Material", "Firebase", "Webpack"],
+        "preview": ""
+    },
+    {
+        "title": "UCR Coin Laundry",
+        "description": "",
+        "url": "http://ucrcoinlaundry.com/",
+        "tags": ["Bootstrap 4", "Jekyll"],
+        "preview": "./assets/images/ucrcoinlaundry-preview.png"
+    },
+    {
+        "title": "CPS Uninterruptible Power",
+        "description": "",
+        "url": "http://www.cps-ups.com/",
+        "tags": ["Bootstrap 4", "Jekyll"],
+        "preview": "./assets/images/cps-preview.png"
+    },
+    {
+        "title": "VEXTit",
+        "description": "",
+        "url": "https://vextit.netlify.com/",
+        "tags": ["Bootstrap 4", "Jekyll"],
+        "preview": "./assets/images/vextit-preview.png"
+    },
+    {
+        "title": "Allyson Jeffredo's Site",
+        "description": "",
+        "url": "https://www.allysonjeffredo.com",
+        "tags": ["Bootstrap 4", "Jekyll"],
+        "preview": "./assets/images/allysonjeffredo-preview.png"
+    },
+    {
+        "title": "Lotus 2 Salon",
+        "description": "",
+        "url": "http://lotus2salon.com/",
+        "tags": ["Bootstrap 3", "Jekyll"],
+        "preview": "./assets/images/lotus2salon-preview.png"
+    }
+]

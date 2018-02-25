@@ -1,0 +1,24 @@
+title: Diego Bernal
+me: Diego Bernal
+favicon: assets/images/favicon.ico
+profileImage: assets/images/profile.jpg
+ogTitle: Hola! I'm Diego
+ogType: website
+ogDescription: I'm Diego, web developer and front-end engineer
+ogImage: assets/go-diego-screenshot.png
+
+email: hola@godiego.me
+linkedInUrl: https://www.linkedin.com/in/dbernal91/
+facebookUrl: https://www.facebook.com/diego.bernal.91
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: ""
+
+# Build settings
+markdown: kramdown
+#permalink: pretty
+
+include: [_pages]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json

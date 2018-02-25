@@ -1,0 +1,53 @@
+.has-danger .col-form-label,
+.has-danger .custom-control,
+.has-danger .form-check-label,
+.has-danger .form-control-feedback,
+.has-danger .form-control-label {
+    color: #d9534f;
+}
+
+.text-primary {
+    color: $theme-primary !important;
+}
+
+.bg-primary {
+    background-color: $theme-primary !important;
+}
+
+#contact-form {
+    .form-group {
+        .form-control-feedback {
+            display: none;
+        }
+        &.has-danger {
+            .form-control-feedback {
+                display: inline;
+            }
+        }
+    }
+}
+
+ul.social-buttons li a {
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: $theme-primary;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: darken($theme-primary, 10%);
+        transform: translateY(-3px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        //filter: brightness(130%);
+    }
+}

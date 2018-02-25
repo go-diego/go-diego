@@ -1,0 +1,10 @@
+[
+    {
+        "url": "index.html",
+        "label": "Home"
+    },
+    {
+        "url": "portfolio.html",
+        "label": "Portfolio"
+    }
+]

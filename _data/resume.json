@@ -1,0 +1,114 @@
+{
+    "education": [
+        {
+            "campus": "CSU San Bernardino",
+            "degree": "B.S - Computer Engineering",
+            "dateRange": "Sept 2009 - June 2014"
+        },
+        {
+            "campus": "CSU San Bernardino",
+            "degree": "Minor - Applied Physics",
+            "dateRange": "Sept 2009 - June 2014"
+        },
+        {
+            "campus": "CSU San Bernardino",
+            "degree": "Minor - Mathematics",
+            "dateRange": "Sept 2009 - June 2014"
+        }
+    ],
+    "experiences": [
+        {
+            "employer": "Readylink Healthcare",
+            "description":
+                "Two Travellers, walking in the noonday sun, sought the shade of a widespreading tree to rest. As they lay looking up among the pleasant leaves, they saw that it was a Plane Tree.",
+            "dateRange": "June 2014 - Present"
+        }
+    ],
+    "skills": [
+        {
+            "skill": "HTML5",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "Javascript",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "NodeJS",
+            "rating": 3,
+            "years": ""
+        },
+        {
+            "skill": "ES6",
+            "rating": 3,
+            "years": ""
+        },
+        {
+            "skill": "jQuery",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "AngularJS",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "VueJS",
+            "rating": 2,
+            "years": ""
+        },
+        {
+            "skill": "Bootstrap 3/4",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "Angular Material",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "Jekyll",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "Gulp",
+            "rating": 5,
+            "years": ""
+        },
+        {
+            "skill": "Webpack",
+            "rating": 4,
+            "years": ""
+        },
+        {
+            "skill": "Firebase",
+            "rating": 4,
+            "years": ""
+        },
+        {
+            "skill": "SQL",
+            "rating": 3,
+            "years": ""
+        },
+        {
+            "skill": "C#",
+            "rating": 3,
+            "years": ""
+        },
+        {
+            "skill": "ASP.NET MVC",
+            "rating": 4,
+            "years": ""
+        },
+        {
+            "skill": "AWS",
+            "rating": 3,
+            "years": ""
+        }
+    ]
+}

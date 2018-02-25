@@ -1,0 +1,9 @@
+{
+    "name": "go-diego",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "bundle exec jekyll serve",
+        "build": "bundle exec jekyll build"
+    }
+}
