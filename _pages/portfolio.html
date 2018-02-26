@@ -6,9 +6,8 @@ permalink: portfolio.html
 
 <div class="container">
     <h3 class="h2 mt-5"><i class="text-primary fas fa-th-large pr-1"></i>Portfolio</h3>
-    <p>A certain Wolf could not get enough to eat because of the watchfulness of the Shepherds. But one night he found a sheep skin that had been cast aside and forgotten. The next day, dressed in the skin, the Wolf strolled into the pasture with the Sheep. Soon a little Lamb was following him about and was quickly led away to slaughter.</p>
-    <p>That evening the Wolf entered the fold with the flock. But it happened that the Shepherd took a fancy for mutton broth that very evening, and, picking up a knife, went to the fold. There the first he laid hands on and killed was the Wolf.</p>
-    <p>The evil doer often comes to harm through his own deceit.</p>
+    <p>Here are examples of some work I have done. Most are static sites built with Jekyll as a generator. Some of these are collaborations, but I have been responsible for most of the structure.</p>
+    <p><b>ShopLocal</b> is a pet project I have been working on by myself for the better part of a year. It will be an e-commerce platform on which users can find goods locally and merchants can advertise their goods and stores.</p>
     <div class="row d-flex flex-wrap">
         {% for project in site.data.portfolio %}
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 py-2">
@@ -21,13 +20,13 @@ permalink: portfolio.html
                                 <span class="bg-primary badge badge-pill badge-secondary">{{tag}}</span>
                             {% endfor %}
                         </p>
-                        {% if project.description != blank %}
-                            <small class="card-text">
+                        {% if project.description != "" %}
+                            <small class="card-text d-block pb-2">
                                 {{project.description}}
                             </small>
                         {% endif %}
-                        {% if project.url != blank %}
-                            <a href="{{project.url}}" target="_blank" class="btn btn-outline-dark">Check it out</a>
+                        {% if project.url != "" %}
+                            <a href="{{project.url}}" target="_blank" class="btn btn-outline-dark btn-sm">Check it out</a>
                         {% endif %}
                     </div>
                 </div>

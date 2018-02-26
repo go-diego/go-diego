@@ -20,7 +20,7 @@
         {
             "employer": "Readylink Healthcare",
             "description":
-                "Two Travellers, walking in the noonday sun, sought the shade of a widespreading tree to rest. As they lay looking up among the pleasant leaves, they saw that it was a Plane Tree.",
+                "Began here working on an ASP .NET MVC application. It consists of a SQL database, C# on the server side and Bootstrap 3 and jQuery on the client. The application is still in use and actively maintained. Currently working on a single page application with AngularJS on the client that communicates to a SQL database via a RESTful API.",
             "dateRange": "June 2014 - Present"
         }
     ],

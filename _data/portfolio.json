@@ -2,42 +2,42 @@
     {
         "title": "ShopLocal",
         "description":
-            "Shop Local is a pet project still in its early stages. It is to be a web application where users search for goods locally.  There will also be an admin side to this where merchants can manage inventory and update business information",
+            "Shop Local is an early prototype of an ecommerce application. Consumers can search for goods locally and merchants can login and manage inventory and business information.",
         "url": "",
         "tags": ["AngularJS", "Angular Material", "Firebase", "Webpack"],
-        "preview": ""
+        "preview": "./assets/images/shoplocal-preview.gif"
     },
     {
         "title": "UCR Coin Laundry",
-        "description": "",
+        "description": "Simple static site for a laundromat using a Bootstrap template that I converted to Jekyll.",
         "url": "http://ucrcoinlaundry.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/ucrcoinlaundry-preview.png"
     },
     {
         "title": "CPS Uninterruptible Power",
-        "description": "",
+        "description": "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation.",
         "url": "http://www.cps-ups.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/cps-preview.png"
     },
     {
         "title": "VEXTit",
-        "description": "",
+        "description": "Prototype for an upcoming project VEXTit. Simple landing page using Bootstrap 4.",
         "url": "https://vextit.netlify.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/vextit-preview.png"
     },
     {
         "title": "Allyson Jeffredo's Site",
-        "description": "",
+        "description": "Work in progress. Allyson's personal site displaying her published works and resume.  Need to contact her? Visit her site and leave her a message.",
         "url": "https://www.allysonjeffredo.com",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/allysonjeffredo-preview.png"
     },
     {
         "title": "Lotus 2 Salon",
-        "description": "",
+        "description": "Static, informational site for a hair salon. Used a Bootstrap 3 template and converted it to Jekyll.",
         "url": "http://lotus2salon.com/",
         "tags": ["Bootstrap 3", "Jekyll"],
         "preview": "./assets/images/lotus2salon-preview.png"
