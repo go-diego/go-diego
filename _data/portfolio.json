@@ -16,7 +16,8 @@
     },
     {
         "title": "CPS Uninterruptible Power",
-        "description": "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation.",
+        "description":
+            "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation.",
         "url": "http://www.cps-ups.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/cps-preview.png"
@@ -30,14 +31,16 @@
     },
     {
         "title": "Allyson Jeffredo's Site",
-        "description": "Work in progress. Allyson's personal site displaying her published works and resume.  Need to contact her? Visit her site and leave her a message.",
+        "description":
+            "Work in progress. Allyson is the content editor of this site. Want to see her published work? Want her to edit your content? Visit her website and leave her a message.",
         "url": "https://www.allysonjeffredo.com",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/allysonjeffredo-preview.png"
     },
     {
         "title": "Lotus 2 Salon",
-        "description": "Static, informational site for a hair salon. Used a Bootstrap 3 template and converted it to Jekyll.",
+        "description":
+            "Static, informational site for a hair salon. Used a Bootstrap 3 template and converted it to Jekyll.",
         "url": "http://lotus2salon.com/",
         "tags": ["Bootstrap 3", "Jekyll"],
         "preview": "./assets/images/lotus2salon-preview.png"
