@@ -2,17 +2,17 @@
     "education": [
         {
             "campus": "CSU San Bernardino",
-            "degree": "B.S - Computer Engineering",
+            "degree": "Bachelor of Science in Computer Engineering",
             "dateRange": "Sept 2009 - June 2014"
         },
         {
             "campus": "CSU San Bernardino",
-            "degree": "Minor - Applied Physics",
+            "degree": "Minor in Applied Physics",
             "dateRange": "Sept 2009 - June 2014"
         },
         {
             "campus": "CSU San Bernardino",
-            "degree": "Minor - Mathematics",
+            "degree": "Minor in Mathematics",
             "dateRange": "Sept 2009 - June 2014"
         }
     ],

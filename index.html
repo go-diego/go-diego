@@ -1,56 +1,65 @@
----
-layout: layout
-title: Home
-permalink: index.html
+--- 
+layout: layout 
+title: Home 
+permalink: index.html 
 ---
 <section class="container " id="">
-    <h3 class="h2 mt-5"><i class="text-primary fas fa-user pr-1"></i> About Me</h3>
+    <h3 class="h2 mt-5">
+        <i class="text-primary fas fa-user pr-1"></i> About Me</h3>
     <p>
-        I'm a software developer with an engineering background and strong mathematical and problem-solving skills. I am very interested in developing lean, efficient, readable, and maintainable code and I'm a fan of best practices. I focus on web technologies and I professionally develop websites and applications. I like to follow new, trending technologies and find ways to apply them to real-world applications.
+        As a software developer specializing in web technologies, I am capable of developing anything from simple, static sites to
+        robust, complex applications. My background in engineering and mathematics and almost four years of developing software
+        professionally have made me passionate about developing lean, clean, efficient, readable and maintainable code. In
+        a field that is constantly changing and evolving, I have learned that it is essential to adapt and be aware of trending
+        and upcoming technologies. This awareness means my clients are guaranteed a modern solution to their current problems.
     </p>
-    <p>I reside in Southern California where I call the Coachella Valley home.</p>
-    <h3 class="h2 mt-5"><i class="text-primary fas fa-briefcase pr-1"></i>Experience</h3>
+    <h3 class="h2 mt-5">
+        <i class="text-primary fas fa-briefcase pr-1"></i>Experience</h3>
     <div class="list-group">
         {% for job in site.data.resume.experiences %}
-            <div class="list-group-item flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{job.employer}}</h5>
-                    <small class="text-muted">{{job.dateRange}}</small>
-                </div>
-                <p class="mb-1">{{job.description}}</p>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{job.employer}}</h5>
+                <small class="text-muted">{{job.dateRange}}</small>
             </div>
+            <p class="mb-1">{{job.description}}</p>
+        </div>
         {% endfor %}
     </div>
-    <h3 class="h2 mt-5"><i class="text-primary fas fa-graduation-cap pr-1"></i>Education</h3>
+    <h3 class="h2 mt-5">
+        <i class="text-primary fas fa-graduation-cap pr-1"></i>Education</h3>
     <div class="list-group">
         {% for edu in site.data.resume.education %}
-            <div class="list-group-item flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{edu.degree}}</h5>
-                    <small class="text-muted">{{edu.dateRange}}</small>
-                </div>
-                <p class="mb-1">{{edu.campus}}</p>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{edu.degree}}</h5>
+                <small class="text-muted">{{edu.dateRange}}</small>
             </div>
+            <p class="mb-1">{{edu.campus}}</p>
+        </div>
         {% endfor %}
     </div>
-    <h3 class="h2 mt-5"><i class="text-primary fas fa-star pr-1"></i>Skills</h3>
+    <h3 class="h2 mt-5">
+        <i class="text-primary fas fa-star pr-1"></i>Skills</h3>
     <div class="list-group">
-        {% for skill in site.data.resume.skills %}
-            <div class="list-group-item flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{skill.skill}}</h5>
-                    <small class="text-muted">{{edu.dateRange}}</small>
-                </div>
-                <p class="mb-1">
-                    {% for star in (0..4)  %}
-                        {% if  star < skill.rating %}
-                            <i class="text-primary fas fa-star"></i>
-                        {% else %}
-                                <i class="far fa-star"></i>
-                        {% endif %}       
-                    {%  endfor %}
-                </p>
+
+        {% assign sortedSkills = (site.data.resume.skills | sort: "rating") | reverse %}
+        {% for skill in  sortedSkills %}
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{skill.skill}}</h5>
+                <small class="text-muted">{{edu.dateRange}}</small>
             </div>
+            <p class="mb-1">
+                {% for star in (0..4) %} 
+                    {% if star < skill.rating %} 
+                        <i class="text-primary fas fa-star"></i>
+                    {% else %}
+                        <i class="far fa-star"></i>
+                    {% endif %} 
+                {% endfor %}
+            </p>
+        </div>
         {% endfor %}
     </div>
 </section>
