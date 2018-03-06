@@ -19,6 +19,7 @@
     "experiences": [
         {
             "employer": "Readylink Healthcare",
+            "title": "Web Developer",
             "description":
                 "Began here working on an ASP .NET MVC application. It consists of a SQL database, C# on the server side and Bootstrap 3 and jQuery on the client. The application is still in use and actively maintained. Currently working on a single page application with AngularJS on the client that communicates to a SQL database via a RESTful API.",
             "dateRange": "June 2014 - Present"

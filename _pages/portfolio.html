@@ -22,7 +22,7 @@ permalink: portfolio.html
                         </p>
                         {% if project.description != "" %}
                             <small class="card-text d-block pb-2">
-                                {{project.description}}
+                                {{project.description | markdownify}}
                             </small>
                         {% endif %}
                         {% if project.url != "" %}

@@ -9,7 +9,8 @@
     },
     {
         "title": "UCR Coin Laundry",
-        "description": "Simple static site for a laundromat using a Bootstrap template that I converted to Jekyll.",
+        "description":
+            "Simple static site for a laundromat using a Bootstrap template that I converted to Jekyll. Teamed up with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a> on this one.",
         "url": "http://ucrcoinlaundry.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/ucrcoinlaundry-preview.png"
@@ -17,7 +18,7 @@
     {
         "title": "CPS Uninterruptible Power",
         "description":
-            "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation.",
+            "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation. This was done in collaboration with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a>.",
         "url": "http://www.cps-ups.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/cps-preview.png"
@@ -32,7 +33,7 @@
     {
         "title": "Allyson Jeffredo's Site",
         "description":
-            "Work in progress. Allyson is the content editor of this site. Want to see her published work? Want her to edit your content? Visit her website and leave her a message.",
+            "The great Allyson Jeffredo is the content editor for this site. Go buy her book, hire her, checkout out her published work, or check out what she is up to by clicking below to visit her website.",
         "url": "https://www.allysonjeffredo.com",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/allysonjeffredo-preview.png"
