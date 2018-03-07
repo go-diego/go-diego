@@ -33,7 +33,7 @@
     {
         "title": "Allyson Jeffredo's Site",
         "description":
-            "The great Allyson Jeffredo is the content editor for this site. Go buy her book, hire her, checkout out her published work, or check out what she is up to by clicking below to visit her website.",
+            "The great Allyson Jeffredo is the content editor for this site. Go buy her book, hire her, check out out her published work, or check out what she is up to by clicking below to visit her website.",
         "url": "https://www.allysonjeffredo.com",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/allysonjeffredo-preview.png"
