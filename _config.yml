@@ -19,6 +19,9 @@ facebookUrl: https://www.facebook.com/diego.bernal.91
 markdown: kramdown
 #permalink: pretty
 
+plugins_dir:
+  - jemoji
+
 include: [_pages]
 exclude:
   - Gemfile

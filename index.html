@@ -3,7 +3,7 @@ layout: layout
 title: Home 
 permalink: index.html 
 ---
-<section class="container " id="">
+<section class="container">
     <h3 class="h2 mt-5">
         <i class="text-primary fas fa-user pr-1"></i> About Me</h3>
     <p class="text-justify">
@@ -41,25 +41,23 @@ permalink: index.html
     </div>
     <h3 class="h2 mt-5">
         <i class="text-primary fas fa-star pr-1"></i>Skills</h3>
-    <div class="list-group">
-
+    <div class="row">
         {% assign sortedSkills = (site.data.resume.skills | sort: "rating") | reverse %}
         {% for skill in  sortedSkills %}
-        <div class="list-group-item flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{skill.skill}}</h5>
-                <small class="text-muted">{{edu.dateRange}}</small>
+            <div class="col-sm-12 col-md-6">
+                <div class="d-flex justify-content-between px-3">
+                    <h5 class="mb-1">{{skill.skill}}</h5>
+                    <p class="mb-1">
+                        {% for star in (0..4) %} 
+                            {% if star < skill.rating %} 
+                                <i class="text-primary fas fa-star"></i>
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %} 
+                        {% endfor %}
+                    </p>
+                </div> 
             </div>
-            <p class="mb-1">
-                {% for star in (0..4) %} 
-                    {% if star < skill.rating %} 
-                        <i class="text-primary fas fa-star"></i>
-                    {% else %}
-                        <i class="far fa-star"></i>
-                    {% endif %} 
-                {% endfor %}
-            </p>
-        </div>
         {% endfor %}
     </div>
 </section>
