@@ -4,8 +4,10 @@ title: Home
 permalink: index.html 
 ---
 <section class="container">
-    <h3 class="h2 mt-5">
-        <i class="text-primary fas fa-user pr-1"></i> About Me</h3>
+<div class="d-flex align-items-center mt-5 mb-3">
+    <span class="header-emoji">:bowtie:</span> 
+    <h3 class="h2 m-0">About Me</h3>
+</div>
     <p class="text-justify">
         As a software developer specializing in web technologies, I can develop anything from simple, static sites to
         complex, ever-changing web applications. My background in engineering and mathematics and almost four years of developing software
@@ -13,8 +15,10 @@ permalink: index.html
         a field that is constantly changing and evolving, I have learned that it is essential to adapt and be aware of trending
         and upcoming technologies. This gurantees my clients receive a modern solution to their current problems.
     </p>
-    <h3 class="h2 mt-5">
-        <i class="text-primary fas fa-briefcase pr-1"></i>Experience</h3>
+   <div class="d-flex align-items-center mt-5 mb-3">
+        <span class="header-emoji">:necktie:</span> 
+        <h3 class="h2 m-0">Experience</h3>
+    </div>
     <div class="list-group">
         {% for job in site.data.resume.experiences %}
         <div class="list-group-item flex-column align-items-start">
@@ -26,8 +30,10 @@ permalink: index.html
         </div>
         {% endfor %}
     </div>
-    <h3 class="h2 mt-5">
-        <i class="text-primary fas fa-graduation-cap pr-1"></i>Education</h3>
+    <div class="d-flex align-items-center mt-5 mb-3">
+        <span class="header-emoji">:mortar_board:</span> 
+        <h3 class="h2 m-0">Education</h3>
+    </div>
     <div class="list-group">
         {% for edu in site.data.resume.education %}
         <div class="list-group-item flex-column align-items-start">
@@ -39,8 +45,10 @@ permalink: index.html
         </div>
         {% endfor %}
     </div>
-    <h3 class="h2 mt-5">
-        <i class="text-primary fas fa-star pr-1"></i>Skills</h3>
+    <div class="d-flex align-items-center mt-5 mb-3">
+        <span class="header-emoji">:fire:</span> 
+        <h3 class="h2 m-0">Skills</h3>
+    </div>
     <div class="row">
         {% assign sortedSkills = (site.data.resume.skills | sort: "rating") | reverse %}
         {% for skill in  sortedSkills %}
