@@ -50,7 +50,7 @@ permalink: index.html
         <h3 class="h2 m-0">Skills</h3>
     </div>
     <div class="row">
-        {% assign sortedSkills = (site.data.resume.skills | sort: "rating") | reverse %}
+        {% assign sortedSkills = site.data.resume.skills | sort: "rating" | reverse %}
         {% for skill in  sortedSkills %}
             <div class="col-sm-12 col-md-6">
                 <div class="d-flex justify-content-between px-3">
