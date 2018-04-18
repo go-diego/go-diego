@@ -4,6 +4,16 @@
     "description": "",
     "scripts": {
         "start": "bundle exec jekyll serve",
-        "build": "bundle exec jekyll build"
+        "build": "bundle exec jekyll build",
+        "browserify": "browserify vendors.js -o js/vendors.js"
+    },
+    "dependencies": {
+        "bootstrap": "^4.1.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.3"
+    },
+    "devDependencies": {
+        "browserify": "^16.2.0",
+        "gulp": "^3.9.1"
     }
 }
