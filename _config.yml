@@ -8,20 +8,15 @@ ogType: website
 ogDescription: I'm Diego, web developer and front-end engineer
 ogImage: assets/images/godiego-preview.png
 ogUrl: https://www.godiego.me/
-
 email: hola@godiego.me
 linkedInUrl: https://www.linkedin.com/in/dbernal91/
 facebookUrl: https://www.facebook.com/diego.bernal.91
+googleAnalyticsId: UA-116050053-1
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: ""
-
-# Build settings
 markdown: kramdown
-#permalink: pretty
-
 plugins:
   - jemoji
-
 include: [_pages]
 exclude:
   - Gemfile
