@@ -12,8 +12,6 @@ email: hola@godiego.me
 linkedInUrl: https://www.linkedin.com/in/dbernal91/
 facebookUrl: https://www.facebook.com/diego.bernal.91
 googleAnalyticsId: UA-116050053-1
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: ""
 markdown: kramdown
 plugins:
   - jemoji
@@ -24,5 +22,4 @@ exclude:
   - package.json
   - node_modules
   - package-lock.json
-  - vendors.js
-  - gulpfile.js
+  - src

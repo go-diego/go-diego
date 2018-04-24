@@ -16824,8 +16824,11 @@ return Popper;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],4:[function(require,module,exports){
+
+},{}],5:[function(require,module,exports){
+require("./vendors.css");
 window.jQuery = $ = require("jquery");
 require("popper.js");
 require("bootstrap");
 
-},{"bootstrap":1,"jquery":2,"popper.js":3}]},{},[4]);
+},{"./vendors.css":4,"bootstrap":1,"jquery":2,"popper.js":3}]},{},[5]);
