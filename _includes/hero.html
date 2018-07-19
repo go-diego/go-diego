@@ -1,33 +1,10 @@
 <header id="pageTop" class="header">
     <div class="container h-100 py-5">
-        <div class="row d-flex justify-content-center">
-            <div class="hero-card col-sm-6 col-10 d-flex flex-column align-items-center card p-4">
-                <img class="rounded-circle profile-image" alt="{{site.me}}" src="{{site.profileImage}}" />
-                <h1 class="">{{site.me}}</h1>
-                <h2 class="text-muted h4">Web Developer</h2>
-                <h3 class="text-muted h6">{{site.location}}</h3>
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="{{site.facebookUrl}}" target="_blank">
-                            <i class="fab fa-facebook-square"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="{{site.linkedInUrl}}" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="mailto:{{site.email}}">
-                            <i class="fas fa-envelope-square"></i>
-                        </a>
-                    </li>
-                </ul>
-                <a href="assets/diego-bernal-cv.pdf" target="_blank" class="btn btn-outline-secondary">
-                    Download CV
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            {% if page.emoji %}
+            <span class="header-emoji">:{{page.emoji}}:</span>
+            {% endif %}
+            <h1 class="text-white display-3">{{page.title}}</h1>
         </div>
     </div>
 </header>

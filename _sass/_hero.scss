@@ -1,5 +1,8 @@
 header {
-    min-height: 60vh;
+    height: 200px;
+    &.header-home {
+        min-height: 60vh;
+    }
     background-image: url("https://www.dealfuel.com/wp-content/uploads/2015/06/tessellation-patterns-cream-1024x576.jpg");
     //background-image: url("https://apod.nasa.gov/apod/image/1802/NGC6946-Subaru-Gendler900c.jpg");
     background-repeat: no-repeat;
@@ -10,5 +13,13 @@ header {
         height: 10rem;
         width: 10rem;
         border: 5px solid $theme-primary;
+    }
+
+    .header-emoji {
+        img.emoji {
+            margin-right: 10px;
+            height: 5rem;
+            width: 5rem;
+        }
     }
 }
