@@ -10,7 +10,7 @@ permalink: portfolio.html
     <div class="row d-flex flex-wrap">
         {% for project in site.data.portfolio %}
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 py-2">
-                <div class="card h-100">
+                <div class="card shadow h-100">
                     <img class="card-img-top" src="{{project.preview}}" alt="{{project.title}}">
                     <div class="card-body">
                         <h5 class="card-title">{{project.title}}</h5>
@@ -21,7 +21,7 @@ permalink: portfolio.html
                         </p>
                         {% if project.description != "" %}
                             <small class="card-text d-block pb-2">
-                                {{project.description | markdownify}}
+                                {{project.description | markdownify | replace: '<p>' | replace: '</p>'}}
                             </small>
                         {% endif %}
                         {% if project.url != "" %}

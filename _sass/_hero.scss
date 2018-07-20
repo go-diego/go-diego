@@ -1,5 +1,5 @@
 header {
-    height: 200px;
+    // height: 200px;
     &.header-home {
         min-height: 60vh;
     }
@@ -19,8 +19,8 @@ header {
     .header-emoji {
         img.emoji {
             margin-right: 10px;
-            height: 5rem;
-            width: 5rem;
+            height: 3rem;
+            width: 3rem;
         }
     }
 }
