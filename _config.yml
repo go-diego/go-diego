@@ -11,10 +11,13 @@ ogUrl: https://www.godiego.me/
 email: hola@godiego.me
 linkedInUrl: https://www.linkedin.com/in/dbernal91/
 facebookUrl: https://www.facebook.com/diego.bernal.91
+githubUrl: https://github.com/go-diego
 googleAnalyticsId: UA-116050053-1
 markdown: kramdown
 plugins:
   - jemoji
+jekyll-timeago:
+  depth: 1
 include: [_pages]
 exclude:
   - Gemfile

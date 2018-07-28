@@ -4,18 +4,18 @@ title: Home
 permalink: index.html 
 ---
 <section class="container">
-<div class="d-flex align-items-center mt-5 mb-3">
-    <span class="header-emoji">:bowtie:</span> 
-    <h3 class="h2 m-0">About Me</h3>
-</div>
+    <div class="d-flex align-items-center mt-5 mb-3">
+        <span class="header-emoji">:bowtie:</span> 
+        <h3 class="h2 m-0">About Me</h3>
+    </div>
     <p class="text-justify">
         As a software developer specializing in web technologies, I can develop anything from simple, static sites to
-        complex, ever-changing web applications. My background in engineering and mathematics and almost four years of developing software
+        complex, ever-changing web applications. My background in engineering and mathematics and {{site.time | date: '%Y' | minus: 2014}} years of developing software
         professionally has made me passionate about developing lean, clean, efficient, readable and maintainable code. In
         a field that is constantly changing and evolving, I have learned that it is essential to adapt and be aware of trending
-        and upcoming technologies. This gurantees my clients receive a modern solution to their current problems.
+        and upcoming technologies.
     </p>
-   <div class="d-flex align-items-center mt-5 mb-3">
+    <div class="d-flex align-items-center mt-5 mb-3">
         <span class="header-emoji">:necktie:</span> 
         <h3 class="h2 m-0">Experience</h3>
     </div>
@@ -57,11 +57,15 @@ permalink: index.html
                     <h5 class="mb-1">{{skill.skill}}</h5>
                     <p class="mb-1">
                         {% for star in (0..4) %} 
-                            {% if star < skill.rating %} 
+                            {% if skill.rating == 5 %}
                                 <i class="text-primary fas fa-star"></i>
                             {% else %}
-                                <i class="far fa-star"></i>
-                            {% endif %} 
+                                {% if star < skill.rating %} 
+                                    <i class="text-secondary fas fa-star"></i>
+                                {% else %}
+                                    <i class="text-secondary far fa-star"></i>
+                                {% endif %} 
+                            {% endif %}
                         {% endfor %}
                     </p>
                 </div> 
