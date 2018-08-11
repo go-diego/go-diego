@@ -1,47 +1,42 @@
 [
     {
         "title": "ShopLocal",
-        "description":
-            "Shop Local is a pet project and an early prototype of an ecommerce application. Consumers can search for goods locally and merchants can login and manage inventory and business information.",
+        "description": "Shop Local is a pet project and an early prototype of an ecommerce application. Consumers can search for goods locally and merchants can login and manage inventory and business information.",
         "url": "",
         "tags": ["AngularJS", "Angular Material", "Firebase", "Webpack"],
         "preview": "./assets/images/shoplocal-preview.gif"
     },
     {
         "title": "UCR Coin Laundry",
-        "description":
-            "Simple static site for a laundromat using a Bootstrap template that I converted to Jekyll. Teamed up with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a> on this one.",
+        "description": "Simple static site for a laundromat using a Bootstrap template that I converted to Jekyll. Teamed up with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a> on this one.",
         "url": "http://ucrcoinlaundry.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/ucrcoinlaundry-preview.png"
     },
     {
         "title": "CPS Uninterruptible Power",
-        "description":
-            "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation. This was done in collaboration with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a>.",
+        "description": "Static site using a Bootstrap template with Jekyll. Minimal scripting for form validation and some animation. This was done in collaboration with <a href='https://www.linkedin.com/in/juan-av/' target='_blank'>Juan Villagomez</a>.",
         "url": "http://www.cps-ups.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/cps-preview.png"
     },
     {
-        "title": "VEXTit",
-        "description": "Prototype for an upcoming project VEXTit. Simple landing page using Bootstrap 4.",
-        "url": "https://vextit.netlify.com/",
+        "title": "DJ Boots Production",
+        "description": "Website for local productions company",
+        "url": "https://djbootsprod.com/",
         "tags": ["Bootstrap 4", "Jekyll"],
-        "preview": "./assets/images/vextit-preview.png"
+        "preview": "./assets/images/djbootsprod-preview.jpg"
     },
     {
         "title": "Allyson Jeffredo's Site",
-        "description":
-            "The great Allyson Jeffredo is the content editor for this site. Go buy her book, hire her, check out her published work, or check out what she is up to by clicking below to visit her website.",
+        "description": "The great Allyson Jeffredo is the content editor for this site. Go buy her book, hire her, check out her published work, or check out what she is up to by clicking below to visit her website.",
         "url": "https://www.allysonjeffredo.com",
         "tags": ["Bootstrap 4", "Jekyll"],
         "preview": "./assets/images/allysonjeffredo-preview.png"
     },
     {
         "title": "Lotus 2 Salon",
-        "description":
-            "Static, informational site for a hair salon. Used a Bootstrap 3 template and converted it to Jekyll.",
+        "description": "Static, informational site for a hair salon. Used a Bootstrap 3 template and converted it to Jekyll.",
         "url": "http://lotus2salon.com/",
         "tags": ["Bootstrap 3", "Jekyll"],
         "preview": "./assets/images/lotus2salon-preview.png"
