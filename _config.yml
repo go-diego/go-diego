@@ -6,7 +6,7 @@ profileImage: assets/images/profile.jpg
 ogTitle: Hola! I'm Diego
 ogType: website
 ogDescription: I'm Diego, web developer and front-end engineer
-ogImage: assets/images/godiego-preview.png
+ogImage: assets/images/godiego-preview.jpg
 ogUrl: https://www.godiego.me/
 email: hola@godiego.me
 linkedInUrl: https://www.linkedin.com/in/dbernal91/
@@ -15,14 +15,14 @@ githubUrl: https://github.com/go-diego
 googleAnalyticsId: UA-116050053-1
 markdown: kramdown
 plugins:
-  - jemoji
+    - jemoji
 jekyll-timeago:
-  depth: 1
+    depth: 1
 include: [_pages]
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - node_modules
-  - package-lock.json
-  - src
+    - Gemfile
+    - Gemfile.lock
+    - package.json
+    - node_modules
+    - package-lock.json
+    - src
