@@ -1,120 +1,297 @@
 {
+    "profile": {
+        "name": "Diego Bernal",
+        "title": "Front-End Developer",
+        "email": "hola@godiego.me",
+        "phone": "",
+        "website": "godiego.me",
+        "linkedIn": "",
+        "github": "github.com/go-diego",
+        "location": "Coachella Valley, CA"
+    },
+    "summary": "Software developer with an engineering background, specializing in web technologies. Possesses strong problem-solving skills and an affinity for clean, maintainable, readable and reusable code and best practices. Experienced in developing static websites and complex, multi-layer web applications.",
+    "languages": [
+        {
+            "language": "Spanish",
+            "rating": 5
+        },
+        {
+            "language": "English",
+            "rating": 5
+        },
+        {
+            "language": "French",
+            "rating": 3
+        }
+    ],
     "education": [
         {
             "campus": "CSU San Bernardino",
             "degree": "Bachelor of Science in Computer Engineering",
-            "dateRange": "Sept 2009 - June 2014"
+            "dates": "Sept 2009 - June 2014"
         },
         {
             "campus": "CSU San Bernardino",
             "degree": "Minor in Applied Physics",
-            "dateRange": "Sept 2009 - June 2014"
+            "dates": "Sept 2009 - June 2014"
         },
         {
             "campus": "CSU San Bernardino",
             "degree": "Minor in Mathematics",
-            "dateRange": "Sept 2009 - June 2014"
+            "dates": "Sept 2009 - June 2014"
         }
     ],
     "experiences": [
         {
             "employer": "Readylink Healthcare",
+            "location": "Thousand Palms, CA",
             "title": "Web Developer",
-            "description":
-                "Began here working on an ASP .NET MVC application. It consists of a SQL database, C# on the server side and Bootstrap 3 and jQuery on the client. The application is still in use and actively maintained. Currently working on a single page application with AngularJS on the client that communicates to a SQL database via a RESTful API.",
-            "dateRange": "June 2014 - Present"
+            "tags": [
+                "AngularJS",
+                "Angular Material",
+                "ReactJS",
+                "Redux",
+                "Material UI",
+                "jQuery",
+                "Bootstrap",
+                "SCSS",
+                "Gulp",
+                "C#",
+                "SQL"
+            ],
+            "results": [
+                "Design and develop ASP .NET MVC application with **Bootstrap 3**, **jQuery**, **SQL** and **C#**.",
+                "Design and develop Single Page Application with **AngularJS** and **Angular Material**. Implement build scripts with **Gulp**, **Browserify**, and **NodeJS**.",
+                "Design and develop Single Page Application with **ReactJS**, **Redux**, and **Material UI**."
+            ],
+            "dates": "June 2014 - Present",
+            "type": "technical"
+        },
+        {
+            "employer": "Freelance Developer",
+            "location": "Coachella Valley, CA",
+            "title": "",
+            "results": ["Build, manage, and deploy web projects specified by clients"],
+            "dates": "2016 - Present",
+            "type": "technical"
+        },
+        {
+            "employer": "CSU San Bernardino",
+            "location": "San Bernardino, CA",
+            "title": "Student Assistant",
+            "results": [
+                "Lead and train student staff about proper protocol in dealing with resident students",
+                "Place and take phone calls",
+                "Verify and file maintenance work orders",
+                "Maintain and reconcile student housing key logs",
+                "Provide basic maintenance and housekeeping to student residential spaces"
+            ],
+            "dates": "June 2010 - June 2014",
+            "type": "student"
+        }
+    ],
+    "projects": [
+        {
+            "title": "ShopLocal",
+            "repo": "https://github.com/Brightside-Technologies/nacarat/tree/development",
+            "url": "",
+            "description": "Shop Local is a pet project and an early prototype of an ecommerce application. Consumers can search for goods locally and merchants can login and manage inventory and business information.",
+            "status": "incomplete",
+            "tags": ["AngularJS", "Angular Material", "Firebase", "Webpack"]
+        },
+        {
+            "title": "Brightside CMS",
+            "repo": "https://github.com/Brightside-Technologies/brightside-cms",
+            "url": "",
+            "description": "Git-based CMS for clients to access and update their static websites",
+            "status": "in progress",
+            "tags": ["ReactJS", "Semantic-UI", "Firebase"]
         }
     ],
     "skills": [
         {
             "skill": "HTML5",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": false
+        },
+        {
+            "skill": "Git",
+            "rating": 4,
+            "years": "",
+            "show": true
         },
         {
             "skill": "Javascript",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "NodeJS",
             "rating": 4,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "ES6",
-            "rating": 3,
-            "years": ""
+            "rating": 4,
+            "years": "",
+            "show": false
         },
         {
             "skill": "jQuery",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "AngularJS",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "VueJS",
             "rating": 2,
-            "years": ""
+            "years": "",
+            "show": false
         },
         {
             "skill": "ReactJS",
-            "rating": 3,
-            "years": ""
+            "rating": 4,
+            "years": "",
+            "show": true
         },
         {
-            "skill": "Bootstrap 3/4",
+            "skill": "Bootstrap 4",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "Angular Material",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": false
         },
         {
             "skill": "Jekyll",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": false
         },
         {
             "skill": "Gulp",
             "rating": 5,
-            "years": ""
+            "years": "",
+            "show": false
         },
         {
             "skill": "Webpack",
             "rating": 4,
-            "years": ""
+            "years": "",
+            "show": false
         },
         {
             "skill": "Firebase",
             "rating": 4,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "SQL",
             "rating": 3,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "C#",
             "rating": 3,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "ASP.NET MVC",
             "rating": 4,
-            "years": ""
+            "years": "",
+            "show": true
         },
         {
             "skill": "AWS",
             "rating": 3,
-            "years": ""
+            "years": "",
+            "show": false
+        },
+        {
+            "skill": "SCSS",
+            "rating": 4,
+            "show": true
+        }
+    ],
+    "courses": [
+        {
+            "name": "Data Acquisition & Control",
+            "grade": "A",
+            "description": {
+                "text": "Computer-based data acquisition, control and analysis including instrument control, graphical programming, algorithm development, feedback control algorithms, and computer-based data analysis.",
+                "show": true
+            },
+            "show": true
+        },
+        {
+            "name": "Digital Logic",
+            "grade": "B",
+            "description": {
+                "text": "Combinational and sequential circuits, arithmetic-logic units, memory devices, bread-board assembly of finite state machine circuits, registers and arithmetic-logic processors.",
+                "show": true
+            },
+            "show": true
+        },
+        {
+            "name": "Advanced Digital Logic",
+            "grade": "B-",
+            "description": {
+                "text": "Transistor circuits, MOS and CMOS characteristics, design of logic families, CPLDs and FPGAs, timing, propagation, hazards, bistability and metastability, ASM charts, skew, reliability and testing, and transmission line behavior.",
+                "show": false
+            },
+            "show": false
+        },
+        {
+            "name": "Intro Electronics",
+            "grade": "C+",
+            "description": {
+                "text": "Focused on analog electronics: practical circuits, passive and active circuit elements, signal conditioning, test and measurement skills, and a brief introduction to digital electronics.",
+                "show": true
+            },
+            "show": false
+        },
+        {
+            "name": "Advanced Electronics",
+            "grade": "C+",
+            "description": {
+                "text": "Computer-aided circuit design, high frequency techniques, modular circuit design, and computer-experiment interfacing.",
+                "show": true
+            },
+            "show": false
+        },
+        {
+            "name": "Numerical Computations",
+            "grade": "A",
+            "description": {
+                "text": "Scientific computing and algorithms related to approximations, zero findings, numerical differentiation and integration, data fitting and interpolation, nonlinear equations.",
+                "show": true
+            },
+            "show": true
+        },
+        {
+            "name": "Applied Statics",
+            "grade": "A",
+            "description": {
+                "text": "Covers probability models and statistical procedures for estimation, hypothesis testing and modeling.",
+                "show": true
+            },
+            "show": true
         }
     ]
 }
