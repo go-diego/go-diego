@@ -6,30 +6,31 @@ permalink: portfolio.html
 ---
 
 <div class="container pt-5">
-    <p class="mb-5">From static websites to applications, here are examples of some of my work. I have been responsible for development, management and deployment of most of these projects, although some have been collaborations.</p>
+    <p class="mb-5">From static websites to applications, here are examples of some of my work. I have been responsible
+        for development, management and deployment of most of these projects, although some have been collaborations.</p>
     <div class="row d-flex flex-wrap">
         {% for project in site.data.portfolio %}
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 py-2">
-                <div class="card shadow h-100">
-                    <img class="card-img-top" src="{{project.preview}}" alt="{{project.title}}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{project.title}}</h5>
-                        <p class="card-text">
-                            {% for tag in project.tags %}
-                                <span class="bg-primary badge badge-pill badge-secondary">{{tag}}</span>
-                            {% endfor %}
-                        </p>
-                        {% if project.description != "" %}
-                            <small class="card-text d-block pb-2">
-                                {{project.description | markdownify | replace: '<p>' | replace: '</p>'}}
-                            </small>
-                        {% endif %}
-                        {% if project.url != "" %}
-                            <a href="{{project.url}}" target="_blank" class="btn btn-outline-dark btn-sm">Check it out</a>
-                        {% endif %}
-                    </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 py-2">
+            <div class="card shadow h-100">
+                <img class="card-img-top" src="{{project.preview}}" alt="{{project.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{project.title}}</h5>
+                    <p class="card-text">
+                        {% for tag in project.tags %}
+                        <span class="bg-primary badge font-weight-normal badge-pill badge-secondary">{{tag}}</span>
+                        {% endfor %}
+                    </p>
+                    {% if project.description != "" %}
+                    <small class="card-text d-block pb-2">
+                        {{project.description | markdownify | replace: '<p>' | replace: '</p>'}}
+                    </small>
+                    {% endif %}
+                    {% if project.url != "" %}
+                    <a href="{{project.url}}" target="_blank" class="btn btn-outline-dark btn-sm">Check it out</a>
+                    {% endif %}
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>

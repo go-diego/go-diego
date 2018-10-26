@@ -1,1 +1,3 @@
-$theme-primary: #3f51b5;
+$red: #eb8a71;
+$red-dark: darken($red, 10%);
+$theme-primary: $red-dark;
