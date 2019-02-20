@@ -1,6 +1,22 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-node_modules
-Thumbs.db
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/out
+/build
+/dist
+/.next
+
+# misc
+.DS_Store
+.env
+.env.development
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

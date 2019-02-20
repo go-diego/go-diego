@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+$family-sans-serif: $sans-serif;
+$family-primary: $sans-serif;
+$family-secondary: $font-secondary;
+$primary: $palette-primary;
+$link: $palette-link;
+
+$dimensions: 16 24 32 48 64 96 128 192 256 384;
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+
+@import "~bulma";
