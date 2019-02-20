@@ -23,7 +23,6 @@ export default function HomePage({projects}) {
 }
 
 HomePage.getInitialProps = async () => {
-    console.log("${process.env.GITHUB_TOKEN", process.env.GITHUB_TOKEN);
     const repositoriesShowcase = [
         "ariadne",
         "youtube-search",
@@ -57,7 +56,6 @@ HomePage.getInitialProps = async () => {
         }
     });
     const rate = await octokit.rateLimit.get({});
-    console.log("RATE", rate.data.resources.core);
     const repos = await octokit.repos.listForUser({username: "go-diego"});
     const projects = repos.data.filter(repo => repositoriesShowcase.includes(repo.name));
 
