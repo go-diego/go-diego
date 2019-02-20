@@ -23,6 +23,7 @@ export default function HomePage({projects}) {
 }
 
 HomePage.getInitialProps = async () => {
+    console.log("${process.env.GITHUB_TOKEN", process.env.GITHUB_TOKEN);
     const repositoriesShowcase = [
         "ariadne",
         "youtube-search",
@@ -35,7 +36,7 @@ HomePage.getInitialProps = async () => {
     ];
 
     const octokit = new OctokitWithPlugins({
-        auth: "token 356237a00cf0397f0e1c9a8fd3704148384691e0",
+        auth: `token ${process.env.GITHUB_TOKEN}`,
         previews: ["mercy-preview"],
         throttle: {
             onRateLimit: (retryAfter, options) => {
