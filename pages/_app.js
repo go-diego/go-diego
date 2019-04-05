@@ -5,7 +5,9 @@ import css from "../styles/site.scss";
 
 class Site extends App {
     static async getInitialProps({Component, ctx}) {
-        const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+        const pageProps = Component.getInitialProps
+            ? await Component.getInitialProps(ctx)
+            : {};
 
         return {pageProps};
     }
@@ -20,4 +22,4 @@ class Site extends App {
     }
 }
 
-export default withGoogleAnalytics("UA-116050053-1", Router)(Site);
+export default withGoogleAnalytics("UA-116062422-1", Router)(Site);
