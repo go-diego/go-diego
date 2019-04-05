@@ -1,7 +1,7 @@
 import NextHead from "next/head";
 import {string} from "prop-types";
 
-const defaultDescription = "Hola! I'm Diego. Frnt-end developer based in Coachella Valley";
+const defaultDescription = "Hola! I'm Diego. Front-end developer based in Coachella Valley";
 const defaultOGURL = "https://godiego.me";
 const defaultOGImage = "/static/open-graph.png";
 

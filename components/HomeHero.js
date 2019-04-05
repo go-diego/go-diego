@@ -42,7 +42,7 @@ export default function HomeHero(props) {
                 </div>
             </div>
             <Row>
-                <Box className="shadow-sm box has-background-light">
+                <Box className="has-shadow box has-background-light">
                     <p className="has-text-centered heading is-size-6">Say Hi</p>
                     <Level className="level is-mobile">
                         <LevelLink

@@ -1,6 +1,7 @@
 import App, {Container} from "next/app";
 import Router from "next/router";
 import withGoogleAnalytics from "next-ga";
+import css from "../styles/site.scss";
 
 class Site extends App {
     static async getInitialProps({Component, ctx}) {

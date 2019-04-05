@@ -14,14 +14,33 @@ export default function LeadSection() {
             <SectionTitle title="About Me" />
             <div className="content">
                 <p>
-                    I'm a front-end developer with a background in engineering and mathematics and{" "}
-                    {distanceInWordsToNow(new Date(2014, 5, 24))} of professional experience. From
-                    static websites to dynamic web applications, I can deliver quality software
-                    using modern tooling and best practices.
+                    I'm a front-end developer with a background in engineering
+                    and mathematics and{" "}
+                    {distanceInWordsToNow(new Date(2014, 5, 24))} of
+                    professional experience. From static websites to dynamic web
+                    applications, I can deliver quality software using modern
+                    tooling and best practices.
                 </p>
                 <p>
-                    I am available for consulting, brainstorming, developing, drinking coffee, or
-                    any combination of these.
+                    These days, I'm into ReactJS,{" "}
+                    <a
+                        className="has-text-weight-bold"
+                        href="https://nextjs.org/"
+                        rel="noopener">
+                        NextJS
+                    </a>
+                    , and all things &nbsp;
+                    <a
+                        className="has-text-weight-bold"
+                        href="https://jamstack.org/"
+                        rel="noopener">
+                        JAMstack
+                    </a>
+                    .
+                </p>
+                <p>
+                    I am available for consulting, brainstorming, programming,
+                    drinking coffee, drinking beer, or any combination of these.
                 </p>
             </div>
         </StyledSection>
