@@ -1,3 +1,4 @@
 [build]
-publish = "out"
-command = "npm run export"
+    publish = "out"
+    command = "npm run export"
+    functions = "functions-out"

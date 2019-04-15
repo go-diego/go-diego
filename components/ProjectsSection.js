@@ -5,7 +5,9 @@ import ProjectMedia from "./ProjectMedia";
 import styled from "styled-components";
 
 import Octokit from "@octokit/rest";
-const OctokitWithPlugins = Octokit.plugin(require("@octokit/plugin-throttling"));
+const OctokitWithPlugins = Octokit.plugin(
+    require("@octokit/plugin-throttling")
+);
 
 const Content = styled.div`
     padding-bottom: 16px;
@@ -34,7 +36,9 @@ export default class ProjectsSection extends React.Component {
             throttle: {
                 onRateLimit: (retryAfter, options) => {
                     octokit.log.warn(
-                        `Request quota exhausted for request ${options.method} ${options.url}`
+                        `Request quota exhausted for request ${
+                            options.method
+                        } ${options.url}`
                     );
 
                     if (options.request.retryCount === 0) {
@@ -45,15 +49,24 @@ export default class ProjectsSection extends React.Component {
                 },
                 onAbuseLimit: (retryAfter, options) => {
                     // does not retry, only logs a warning
-                    octokit.log.warn(`Abuse detected for request ${options.method} ${options.url}`);
+                    octokit.log.warn(
+                        `Abuse detected for request ${options.method} ${
+                            options.url
+                        }`
+                    );
                 }
             }
         });
         const repos = await octokit.repos.listForUser({username: "go-diego"});
-        const repositories = repos.data.filter(repo => repositoriesToShowcase.includes(repo.name));
+        const repositories = repos.data.filter(repo =>
+            repositoriesToShowcase.includes(repo.name)
+        );
 
         repositories.forEach(async p => {
-            const topics = await octokit.repos.listTopics({owner: p.owner.login, repo: p.name});
+            const topics = await octokit.repos.listTopics({
+                owner: p.owner.login,
+                repo: p.name
+            });
             p.topics = topics.data.names;
         });
 
@@ -66,19 +79,27 @@ export default class ProjectsSection extends React.Component {
         const {repositories} = this.state;
 
         return (
-            <Section className="has-background-warning">
+            <Section>
                 <SectionTitle title="Projects" />
                 <Content className="content">
                     <p>
-                        The following are some exploratory projects, coding assignments, and for-fun
-                        side-projects that showcase my coding abilities.
+                        The following are some exploratory projects, coding
+                        assignments, and for-fun side-projects that showcase my
+                        coding abilities.
                     </p>
                 </Content>
-                {repositories
-                    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-                    .map(p => (
-                        <ProjectMedia key={p.id} {...p} />
-                    ))}
+                <div className="columns is-multiline">
+                    {repositories
+                        .sort(
+                            (a, b) =>
+                                new Date(b.updated_at) - new Date(a.updated_at)
+                        )
+                        .map(p => (
+                            <div className="column is-half">
+                                <ProjectMedia key={p.id} {...p} />
+                            </div>
+                        ))}
+                </div>
             </Section>
         );
     }
