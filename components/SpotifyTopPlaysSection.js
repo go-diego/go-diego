@@ -6,7 +6,7 @@ import Spotify from "../api/spotify.api";
 
 export default class ProjectsSection extends React.Component {
     state = {
-        topPlayedOnSpotify: []
+        topPlayedOnSpotify: null
     };
 
     async componentDidMount() {
