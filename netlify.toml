@@ -2,3 +2,7 @@
     publish = "out"
     command = "npm run export"
     functions = "functions-out"
+[[redirects]]
+    from = "https://go-diego.netlify.com/*"
+    to = "https://godiego.me/:splat"
+    status = 301
