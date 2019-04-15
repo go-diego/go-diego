@@ -16,20 +16,21 @@ const Div = styled.div`
     position: relative;
 `;
 
-export default function SpotifyMedia(props) {
-    const {artist, image, url} = props;
+export default function SpotifyRecentlyPlayedMedia(props) {
+    const {artist, image, url, track, album} = props;
     return (
         <Div>
             <Figure className="image is-4by5 shadow">
-                <Img alt={artist} src={image} />
+                <Img alt={track} src={image} />
             </Figure>
             <a
                 target="_blank"
                 rel="noopener"
                 href={url}
-                className="title is-5 is-size-6-mobile is-stretched-link">
-                {artist}
+                className="title is-6 is-size-7-mobile is-stretched-link">
+                {track}
             </a>
+            <p>{artist}</p>
         </Div>
     );
 }

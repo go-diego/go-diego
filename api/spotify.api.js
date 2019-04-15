@@ -37,8 +37,26 @@ export default function Spotify() {
         return response.json();
     }
 
+    async function recentlyPlayed({token, limit}) {
+        if (!token) throw new Error("NO_TOKEN");
+        const url = `https://api.spotify.com/v1/me/player/recently-played?limit=${limit}`;
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        };
+        const options = {
+            headers
+        };
+
+        const [error, response] = await to(fetch(url, options));
+        if (error) throw new Error(error);
+        if (!response.ok) return Promise.reject(error);
+        return response.json();
+    }
+
     return Object.freeze({
         refreshToken,
-        getTopPlayed
+        getTopPlayed,
+        recentlyPlayed
     });
 }
