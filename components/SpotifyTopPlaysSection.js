@@ -17,7 +17,6 @@ export default class ProjectsSection extends React.Component {
             token
         });
         const topPlayedOnSpotify = spotifyData.items;
-        console.log("topPlayedOnSpotify", topPlayedOnSpotify);
         this.setState({topPlayedOnSpotify});
     }
 
@@ -28,9 +27,11 @@ export default class ProjectsSection extends React.Component {
                 <Section className="has-background-warning">
                     <SectionTitle title="On Repeat on Spotify" />
                     <div className="columns is-multiline is-mobile">
-                        {topPlayedOnSpotify.map(object => {
+                        {topPlayedOnSpotify.map((object, i) => {
                             return (
-                                <div className="column is-one-fifth-desktop is-half-mobile">
+                                <div
+                                    key={i}
+                                    className="column is-one-fifth-tablet is-one-fifth-desktop is-half-mobile">
                                     <SpotifyMedia
                                         artist={object.name}
                                         image={object.images[0].url}

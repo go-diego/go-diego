@@ -94,9 +94,9 @@ export default class ProjectsSection extends React.Component {
                             (a, b) =>
                                 new Date(b.updated_at) - new Date(a.updated_at)
                         )
-                        .map(p => (
-                            <div className="column is-half">
-                                <ProjectMedia key={p.id} {...p} />
+                        .map(repo => (
+                            <div key={repo.id} className="column is-half">
+                                <ProjectMedia {...repo} />
                             </div>
                         ))}
                 </div>
