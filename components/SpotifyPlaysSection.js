@@ -21,7 +21,7 @@ export default class SpotifyPlays extends React.Component {
         });
         const recentlyPlayedResponse = spotify.recentlyPlayed({
             token,
-            limit: 5
+            limit: 20
         });
 
         const recentlyPlayedData = await recentlyPlayedResponse;
@@ -29,10 +29,14 @@ export default class SpotifyPlays extends React.Component {
         const topPlayedData = await getTopPlayedResponse;
         const topPlayed = topPlayedData.items;
 
-        console.log("topPlayed", topPlayed);
-        console.log("recentlyPlayed", recentlyPlayed);
+        const uniqueRecentlyPlayed = recentlyPlayed.filter((obj, pos, arr) => {
+            return (
+                arr.map(mapObj => mapObj.track.name).indexOf(obj.track.name) ===
+                pos
+            );
+        });
 
-        this.setState({topPlayed, recentlyPlayed});
+        this.setState({topPlayed, recentlyPlayed: uniqueRecentlyPlayed});
     }
 
     render() {
@@ -41,14 +45,17 @@ export default class SpotifyPlays extends React.Component {
             topPlayed && (
                 <Section className="has-background-warning">
                     <SectionTitle title="On Spotify" />
-                    <p className="heading is-size-6">Recently Played</p>
+                    <p className="has-text-weight-bold heading is-size-6">
+                        Recently Played
+                    </p>
                     <div className="columns is-multiline is-mobile">
-                        {recentlyPlayed.map((object, i) => {
+                        {recentlyPlayed.slice(0, 5).map((object, i) => {
                             return (
                                 <div
                                     key={i}
                                     className="column is-one-fifth-tablet is-one-fifth-desktop is-half-mobile">
                                     <SpotifyRecentlyPlayedMedia
+                                        time={object.played_at}
                                         track={object.track.name}
                                         album={object.track.album.name}
                                         artist={object.track.artists[0].name}
@@ -62,7 +69,9 @@ export default class SpotifyPlays extends React.Component {
                             );
                         })}
                     </div>
-                    <p className="heading is-size-6">Top Plays</p>
+                    <p className="has-text-weight-bold heading is-size-6">
+                        Top Artists
+                    </p>
                     <div className="columns is-multiline is-mobile">
                         {topPlayed.map((object, i) => {
                             return (

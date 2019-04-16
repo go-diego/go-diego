@@ -1,3 +1,4 @@
+import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 import styled from "styled-components";
 
 const Figure = styled.figure`
@@ -17,7 +18,7 @@ const Div = styled.div`
 `;
 
 export default function SpotifyRecentlyPlayedMedia(props) {
-    const {artist, image, url, track, album} = props;
+    const {artist, image, url, track, album, time} = props;
     return (
         <Div>
             <Figure className="image is-4by5 shadow">
@@ -31,6 +32,9 @@ export default function SpotifyRecentlyPlayedMedia(props) {
                 {track}
             </a>
             <p>{artist}</p>
+            <small className="is-size-7">{`Last played ${distanceInWordsToNow(
+                new Date(time)
+            )} ago`}</small>
         </Div>
     );
 }
