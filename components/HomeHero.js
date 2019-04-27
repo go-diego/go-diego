@@ -31,19 +31,25 @@ const LevelLink = styled.a`
     }
 `;
 
-export default function HomeHero(props) {
+export default function HomeHero() {
     return (
         <Hero className="hero is-medium">
             <div className="hero-body">
                 <div className="container has-text-centered">
                     <h1 className="is-family-secondary title">Diego Bernal</h1>
-                    <h2 className="subtitle is-uppercase">Front-End Developer</h2>
-                    <h2 className="subtitle is-5">Coachella Valley, California</h2>
+                    <h2 className="subtitle is-uppercase">
+                        Front-End Developer
+                    </h2>
+                    <h2 className="subtitle is-5">
+                        Coachella Valley, California
+                    </h2>
                 </div>
             </div>
             <Row>
                 <Box className="has-shadow box has-background-light">
-                    <p className="has-text-centered heading is-size-6">Say Hi</p>
+                    <p className="has-text-centered heading is-size-6">
+                        Say Hi
+                    </p>
                     <Level className="level is-mobile">
                         <LevelLink
                             href="https://www.facebook.com/diego.bernal.91"
@@ -70,6 +76,15 @@ export default function HomeHero(props) {
                             className="navbar-item level-item is-narrow">
                             <span className="icon is-size-3">
                                 <i className="fab fa-github" />
+                            </span>
+                        </LevelLink>
+                        <LevelLink
+                            href="https://stackoverflow.com/users/6258853/go-diego"
+                            target="_blank"
+                            rel="noopener"
+                            className="navbar-item level-item is-narrow">
+                            <span className="icon is-size-3">
+                                <i className="fab fa-stack-overflow" />
                             </span>
                         </LevelLink>
                         <LevelLink

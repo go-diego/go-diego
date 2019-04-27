@@ -11,6 +11,7 @@
 /build
 /dist
 /.next
+/functions-out
 
 # misc
 .DS_Store
