@@ -1,7 +1,7 @@
 [build]
     publish = "out"
     command = "npm run export"
-    functions = "functions-out"
+    functions = "functions"
 [[redirects]]
     from = "https://go-diego.netlify.com/*"
     to = "https://godiego.me/:splat"

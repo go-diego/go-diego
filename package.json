@@ -5,9 +5,9 @@
         "start": "NODE_ENV=production node server/index.js",
         "build": "next build",
         "static": "http-server ./out -p 8002",
-        "export": "npm run build && next export",
-        "functions:serve": "netlify-lambda serve --config ./webpack.functions.js functions",
-        "functions:build": "netlify-lambda build functions"
+        "export": "functions:build && npm run build && next export",
+        "functions:serve": "netlify-lambda serve --config ./webpack.functions.js functions-dev",
+        "functions:build": "netlify-lambda build functions-dev"
     },
     "dependencies": {
         "@octokit/plugin-throttling": "^2.4.0",
