@@ -21,7 +21,8 @@ const repositoriesToShowcase = [
     "health-sucks",
     "chronos",
     "juniper",
-    "talos"
+    "talos",
+    "tellmehowyoureallyfeel"
 ];
 
 export default class ProjectsSection extends React.Component {
@@ -58,6 +59,7 @@ export default class ProjectsSection extends React.Component {
             }
         });
         const repos = await octokit.repos.listForUser({username: "go-diego"});
+        console.log("repos", repos);
         const repositories = repos.data.filter(repo =>
             repositoriesToShowcase.includes(repo.name)
         );
