@@ -13,7 +13,7 @@ const Content = styled.div`
     padding-bottom: 16px;
 `;
 
-const repositoriesToShowcase = [
+const personalRepositoriesToShowcase = [
     "ariadne",
     "youtube-search",
     "oxomo",
@@ -24,6 +24,7 @@ const repositoriesToShowcase = [
     "talos",
     "tellmehowyoureallyfeel"
 ];
+const organizationRespositoriesToShowcase = ["shop-local"];
 
 export default class ProjectsSection extends React.Component {
     state = {
@@ -31,6 +32,8 @@ export default class ProjectsSection extends React.Component {
     };
 
     async componentDidMount() {
+        let repositories = [];
+
         const octokit = new OctokitWithPlugins({
             auth: `token ${process.env.GITHUB_TOKEN}`,
             previews: ["mercy-preview"],
@@ -58,11 +61,25 @@ export default class ProjectsSection extends React.Component {
                 }
             }
         });
-        const repos = await octokit.repos.listForUser({username: "go-diego"});
-        console.log("repos", repos);
-        const repositories = repos.data.filter(repo =>
-            repositoriesToShowcase.includes(repo.name)
+
+        const personalRepos = await octokit.repos.listForUser({
+            username: "go-diego"
+        });
+
+        repositories = personalRepos.data.filter(repo =>
+            personalRepositoriesToShowcase.includes(repo.name)
         );
+
+        const orgRepos = await octokit.repos.listForOrg({
+            org: "Brightside-Technologies",
+            type: "public"
+        });
+        repositories = [
+            ...repositories,
+            ...orgRepos.data.filter(repo =>
+                organizationRespositoriesToShowcase.includes(repo.name)
+            )
+        ];
 
         repositories.forEach(async p => {
             const topics = await octokit.repos.listTopics({
