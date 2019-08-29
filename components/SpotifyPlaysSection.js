@@ -43,8 +43,11 @@ export default class SpotifyPlays extends React.Component {
         const {topPlayed, recentlyPlayed} = this.state;
         return (
             topPlayed && (
-                <Section className="has-background-warning">
-                    <SectionTitle title="On Spotify" />
+                <Section>
+                    <SectionTitle
+                        className="is-4 is-marginless"
+                        title="What I'm Listening To"
+                    />
                     <p className="has-text-weight-bold heading is-size-6">
                         Recently Played
                     </p>

@@ -72,15 +72,19 @@ export default function ExperienceSection() {
                             needed.
                         </li>
                         <li>
-                            Developed a javascript client library around our
-                            REST APIs so that any client can use it. Serves as a
-                            data service layer and stands alone in its own
-                            repository. Built with <code>ES6</code> classes and
-                            bundled as a universal library with{" "}
+                            Developed a universal Javascript client library
+                            around our REST APIs so that any client can use it.
+                            Serves as a data service layer and stands alone in
+                            its own repository. Built with <code>ES6</code>{" "}
+                            classes and bundled as a universal library with{" "}
                             <strike>
                                 <code>Webpack</code>
                             </strike>
                             <code>Rollup</code>.
+                        </li>
+                        <li>
+                            Developed a universal Javascript client library that
+                            interfaces with third-party phone system.
                         </li>
                     </ul>
                 </div>

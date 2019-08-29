@@ -15,6 +15,7 @@ const NavbarEnd = styled.div`
 const NavbarItem = styled.a`
     align-items: center;
     display: flex;
+    margin: 0;
 `;
 
 export default function Nav() {
@@ -24,21 +25,24 @@ export default function Nav() {
             role="navigation"
             aria-label="main navigation">
             <div className="navbar-brand">
-                <Link href="/">
-                    <a className="navbar-item">
-                        <img src="/static/logo.png" />
-                    </a>
-                </Link>
+                <a href="/" className="navbar-item">
+                    <img src="/static/logo.png" />
+                </a>
             </div>
             <NavbarEnd>
                 <NavbarItem
+                    href="/now"
+                    className="navbar-item heading has-text-weight-bold is-size-7">
+                    Now
+                </NavbarItem>
+                {/* <NavbarItem
                     href="mailto:hola@godiego.me"
                     className="has-background-light navbar-item">
                     <span className="heading is-size-7">Contact Me!</span>
                     <span>
                         <i className="fas fa-at is-size-4" />
                     </span>
-                </NavbarItem>
+                </NavbarItem> */}
             </NavbarEnd>
         </nav>
     );

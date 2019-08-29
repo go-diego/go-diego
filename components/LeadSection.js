@@ -8,40 +8,48 @@ const StyledSection = styled(Section)`
     padding-bottom: 5rem;
 `;
 
+const WillCodeForBeer = styled.div`
+    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
 export default function LeadSection() {
     return (
         <StyledSection className="has-background-warning">
             <SectionTitle title="About Me" />
             <div className="content">
                 <p>
-                    I'm a front-end developer with a background in engineering
-                    and mathematics and{" "}
-                    {distanceInWordsToNow(new Date(2014, 5, 24))} of
-                    professional experience. From static websites to dynamic web
-                    applications, I can deliver quality software using modern
-                    tooling and best practices.
+                    For {distanceInWordsToNow(new Date(2014, 5, 24))}, I have
+                    spent my time creating crisp and dynamic web applications
+                    for the healthcare sector and Coachella Valley
+                    entrepreneurs. So, I can definitely deliver diverse,
+                    high-quality software using up-to-date coding platforms and
+                    industry best practices.
                 </p>
+
                 <p>
-                    These days, I'm into ReactJS,{" "}
-                    <a
-                        className="has-text-weight-bold"
-                        href="https://nextjs.org/"
-                        rel="noopener">
-                        NextJS
-                    </a>
-                    , and all things &nbsp;
-                    <a
-                        className="has-text-weight-bold"
-                        href="https://jamstack.org/"
-                        rel="noopener">
-                        JAMstack
-                    </a>
-                    .
+                    I am available for brainstorming, consulting, programming,
+                    drinking coffee and/or beer, or any combination of the
+                    above.
                 </p>
-                <p>
-                    I am available for consulting, brainstorming, programming,
-                    drinking coffee, drinking beer, or any combination of these.
-                </p>
+                <WillCodeForBeer className="box">
+                    <span className="heading is-size-4 has-text-weight-bold">
+                        Will Code For Beer
+                    </span>
+                    <p>
+                        Need consulting? Need help on a programming assignment?{" "}
+                        <a
+                            className="has-text-weight-bold"
+                            href="mailto:hola@godiego.me">
+                            Buy me a beer!
+                        </a>
+                    </p>
+                </WillCodeForBeer>
             </div>
         </StyledSection>
     );

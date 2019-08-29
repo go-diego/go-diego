@@ -27,7 +27,7 @@ export default function SpotifyMedia(props) {
                 target="_blank"
                 rel="noopener"
                 href={url}
-                className="title is-5 is-size-6-mobile is-stretched-link">
+                className="title is-size-6 is-stretched-link">
                 {artist}
             </a>
         </Div>

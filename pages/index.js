@@ -15,8 +15,6 @@ export default function HomePage() {
             <LeadSection />
             <ExperienceSection />
             <EducationSection />
-            <ProjectsSection />
-            <SpotifyPlaysSection />
         </Layout>
     );
 }

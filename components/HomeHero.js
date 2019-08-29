@@ -38,10 +38,7 @@ export default function HomeHero() {
                 <div className="container has-text-centered">
                     <h1 className="is-family-secondary title">Diego Bernal</h1>
                     <h2 className="subtitle is-uppercase">
-                        Front-End Developer
-                    </h2>
-                    <h2 className="subtitle is-5">
-                        Coachella Valley, California
+                        Front-End Engineer
                     </h2>
                 </div>
             </div>
