@@ -5,7 +5,6 @@ import LeadSection from "../components/LeadSection";
 import ExperienceSection from "../components/ExperienceSection";
 import EducationSection from "../components/EducationSection";
 import ProjectsSection from "../components/ProjectsSection";
-import SpotifyPlaysSection from "../components/SpotifyPlaysSection";
 
 export default function HomePage() {
     return (
@@ -15,6 +14,7 @@ export default function HomePage() {
             <LeadSection />
             <ExperienceSection />
             <EducationSection />
+            <ProjectsSection />
         </Layout>
     );
 }

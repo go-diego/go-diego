@@ -21,7 +21,7 @@ const WillCodeForBeer = styled.div`
 export default function LeadSection() {
     return (
         <StyledSection className="has-background-warning">
-            <SectionTitle title="About Me" />
+            <SectionTitle className="is-4 is-marginless" title="About Me" />
             <div className="content">
                 <p>
                     For {distanceInWordsToNow(new Date(2014, 5, 24))}, I have

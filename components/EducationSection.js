@@ -30,10 +30,13 @@ const EducationListItemContent = styled(Row)`
 export default function EducationSection() {
     return (
         <Section>
-            <SectionTitle title="Education" />
+            <SectionTitle className="is-4 is-marginless" title="Education" />
             <EducationListItem>
                 <Figure className="image is-64x64">
-                    <a href="https://www.csusb.edu/" target="_blank" rel="noopener">
+                    <a
+                        href="https://www.csusb.edu/"
+                        target="_blank"
+                        rel="noopener">
                         <Img className="is-rounded" src="/static/csusb.png" />
                     </a>
                 </Figure>
@@ -46,7 +49,9 @@ export default function EducationSection() {
                             Bachelors of Science in Computer Engineering
                         </p>
                         <p className="is-size-7-mobile">Minor in Mathematics</p>
-                        <p className="is-size-7-mobile">Minor in Applied Physics</p>
+                        <p className="is-size-7-mobile">
+                            Minor in Applied Physics
+                        </p>
                     </div>
                     <span className="is-size-7-mobile">2009 &ndash; 2014</span>
                 </EducationListItemContent>

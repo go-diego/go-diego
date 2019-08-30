@@ -18,10 +18,10 @@ const personalRepositoriesToShowcase = [
     "youtube-search",
     "oxomo",
     "micro-rss-parser",
-    "health-sucks",
+    //"health-sucks",
     "chronos",
-    "juniper",
-    "talos",
+    //"juniper",
+    //"talos",
     "tellmehowyoureallyfeel"
 ];
 const organizationRespositoriesToShowcase = ["shop-local"];
@@ -40,9 +40,7 @@ export default class ProjectsSection extends React.Component {
             throttle: {
                 onRateLimit: (retryAfter, options) => {
                     octokit.log.warn(
-                        `Request quota exhausted for request ${
-                            options.method
-                        } ${options.url}`
+                        `Request quota exhausted for request ${options.method} ${options.url}`
                     );
 
                     if (options.request.retryCount === 0) {
@@ -54,9 +52,7 @@ export default class ProjectsSection extends React.Component {
                 onAbuseLimit: (retryAfter, options) => {
                     // does not retry, only logs a warning
                     octokit.log.warn(
-                        `Abuse detected for request ${options.method} ${
-                            options.url
-                        }`
+                        `Abuse detected for request ${options.method} ${options.url}`
                     );
                 }
             }
@@ -99,7 +95,7 @@ export default class ProjectsSection extends React.Component {
 
         return (
             <Section>
-                <SectionTitle title="Projects" />
+                <SectionTitle className="is-4 is-marginless" title="Projects" />
                 <Content className="content">
                     <p>
                         The following are some exploratory projects, coding

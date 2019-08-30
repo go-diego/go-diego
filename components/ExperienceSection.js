@@ -25,7 +25,7 @@ const NoShrink = styled.div`
 export default function ExperienceSection() {
     return (
         <Section>
-            <SectionTitle title="Experience" />
+            <SectionTitle className="is-4 is-marginless" title="Experience" />
             {/* <ResumeLinkContainer>
                 <span>You can find a copy of my resume </span>
                 <a className="button has-text-link is-text" href="/static/cv.pdf">
