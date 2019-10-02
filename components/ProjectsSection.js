@@ -14,6 +14,7 @@ const Content = styled.div`
 `;
 
 const personalRepositoriesToShowcase = [
+    "mickandrorty",
     "ariadne",
     "youtube-search",
     "oxomo",
