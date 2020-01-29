@@ -7,6 +7,11 @@ const Row = styled.div`
     justify-content: space-between;
 `;
 
+const ExperienceBlock = styled.div`
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+`;
+
 const ResumeLinkContainer = styled(Row)`
     display: flex;
     align-items: center;
@@ -16,10 +21,6 @@ const ResumeLinkContainer = styled(Row)`
         padding-right: 0.25rem;
         padding-left: 0.25rem;
     }
-`;
-
-const NoShrink = styled.div`
-    flex-shrink: 0;
 `;
 
 export default function ExperienceSection() {
@@ -32,7 +33,38 @@ export default function ExperienceSection() {
                     here
                 </a>
             </ResumeLinkContainer> */}
-            <div>
+            <ExperienceBlock>
+                <Row>
+                    <div>
+                        <p className="title is-5 is-size-6-mobile">
+                            CleanSpark
+                        </p>
+                        <p className="subtitle is-5 is-size-6-mobile">
+                            Front-End Engineer
+                        </p>
+                    </div>
+                    <span className="is-size-7-mobile">
+                        Oct 2019 &ndash; Present
+                    </span>
+                </Row>
+                <div className="content">
+                    <ul>
+                        <li>
+                            Build new features and deploy patches to an existing
+                            React SPA.
+                        </li>
+                        <li>
+                            Develop strategy for automated unit + integration
+                            testing.
+                        </li>
+                        <li>
+                            Modernize code base using newest React features and
+                            best practices
+                        </li>
+                    </ul>
+                </div>
+            </ExperienceBlock>
+            <ExperienceBlock>
                 <Row>
                     <div>
                         <p className="title is-5 is-size-6-mobile">
@@ -42,33 +74,31 @@ export default function ExperienceSection() {
                             Web Developer
                         </p>
                     </div>
-
                     <span className="is-size-7-mobile">
-                        Jun 2014 &ndash; Present
+                        Jun 2014 &ndash; Oct 2019
                     </span>
                 </Row>
                 <div className="content">
                     <ul>
                         <li>
-                            Built and currently maintaining (as needed) an
-                            ASP.NET MVC application using <code>jQuery</code>{" "}
-                            and <code>Bootstrap 3</code> on the front-end fed by
+                            Built and maintained an ASP.NET MVC application
+                            using <code>jQuery</code> and{" "}
+                            <code>Bootstrap 3</code> on the front-end fed by
                             controllers via <code>SQL</code> stored procedures.
                         </li>
                         <li>
-                            Built and currently maintaining SPA with{" "}
-                            <code>AngularJS</code> and{" "}
-                            <code>Angular Material</code>. Project consumes REST
-                            API endpoints and is built for production and
+                            Built and maintained SPA with <code>AngularJS</code>{" "}
+                            and <code>Angular Material</code>. Project consumes
+                            REST API endpoints and is built for production and
                             deployed using <code>Gulp</code> and{" "}
                             <code>NodeJS</code>.
                         </li>
                         <li>
-                            Built and currently maintaining SPA with{" "}
-                            <code>ReactJS</code> and <code>Material UI</code>.
-                            Project consumes REST API endpoints and is released
-                            to production using <code>Create React App</code>{" "}
-                            and <code>NodeJS</code> and/or <code>Bash</code> as
+                            Built and maintained SPA with <code>ReactJS</code>{" "}
+                            and <code>Material UI</code>. Project consumes REST
+                            API endpoints and is released to production using{" "}
+                            <code>Create React App</code> and{" "}
+                            <code>NodeJS</code> and/or <code>Bash</code> as
                             needed.
                         </li>
                         <li>
@@ -88,7 +118,7 @@ export default function ExperienceSection() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </ExperienceBlock>
         </Section>
     );
 }
