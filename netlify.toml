@@ -1,7 +1,11 @@
 [build]
     publish = "out"
     command = "npm run export"
-    functions = "functions"
+    functions = "src/functions"
+[dev]
+    command = "npm run dev"
+[context.development]
+    environment = { NODE_ENV = "development",  GA_ID = "0" }
 [[redirects]]
     from = "https://go-diego.netlify.com/*"
     to = "https://godiego.me/:splat"

@@ -35,10 +35,10 @@ const personalRepositoriesToShowcase = ["mickandrorty", "oxomo"];
 
 const repositoriesMetadata = {
   mickandrorty: {
-    image: "/static/mickandrorty.png"
+    image: "/mickandrorty.png"
   },
   oxomo: {
-    image: "/static/oxomo.png"
+    image: "/oxomo.png"
   }
 };
 

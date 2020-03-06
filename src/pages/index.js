@@ -4,7 +4,6 @@ import Head from "../components/Head";
 import LeadSection from "../components/LeadSection";
 import ExperienceSection from "../components/ExperienceSection";
 import EducationSection from "../components/EducationSection";
-import ProjectsSection from "../components/ProjectsSection";
 import ShowcaseSection from "../components/ShowcaseSection";
 
 export default function HomePage() {
