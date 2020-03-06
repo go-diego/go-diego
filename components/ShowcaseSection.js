@@ -87,12 +87,10 @@ export default class ShowcaseSection extends React.Component {
         repo: p.name
       });
       p.topics = topics.data.names;
-      console.log("repositoriesMetadata[p.name]", repositoriesMetadata[p.name]);
       p = {
         ...p,
         ...repositoriesMetadata[p.name]
       };
-      console.log("P", p);
       return p;
     });
 
@@ -119,6 +117,7 @@ export default class ShowcaseSection extends React.Component {
               .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
               .map(repo => (
                 <PostCard
+                  key={repo.name}
                   isLoading={false}
                   alt={repo.name}
                   src={repo.image}
