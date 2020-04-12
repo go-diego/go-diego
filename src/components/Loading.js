@@ -8,9 +8,9 @@ const Container = styled.div`
   flex-grow: 1;
 `;
 
-export default function Loading({color = "#101d2e", children}) {
+export default function Loading({color = "#101d2e", className, children}) {
   return (
-    <Container>
+    <Container className={className}>
       <svg
         width="105"
         height="105"

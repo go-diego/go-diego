@@ -31,7 +31,11 @@ const Level = styled.nav`
   }
 `;
 
-const personalRepositoriesToShowcase = ["mickandrorty", "oxomo"];
+const personalRepositoriesToShowcase = [
+  "mickandrorty",
+  "oxomo",
+  "covid19coachellavalley"
+];
 
 const repositoriesMetadata = {
   mickandrorty: {
@@ -39,6 +43,9 @@ const repositoriesMetadata = {
   },
   oxomo: {
     image: "/oxomo.png"
+  },
+  covid19coachellavalley: {
+    image: "/covid19cv.png"
   }
 };
 
@@ -77,11 +84,11 @@ export default class ShowcaseSection extends React.Component {
       username: "go-diego"
     });
 
-    let repositories = personalRepos.data.filter(repo =>
+    let repositories = personalRepos.data.filter((repo) =>
       personalRepositoriesToShowcase.includes(repo.name)
     );
 
-    const promises = repositories.map(async p => {
+    const promises = repositories.map(async (p) => {
       const topics = await octokit.repos.listTopics({
         owner: p.owner.login,
         repo: p.name
@@ -115,7 +122,7 @@ export default class ShowcaseSection extends React.Component {
           {!isLoading &&
             repositories
               .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-              .map(repo => (
+              .map((repo) => (
                 <PostCard
                   key={repo.name}
                   isLoading={false}
