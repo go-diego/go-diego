@@ -28,7 +28,7 @@ export default function NowPage() {
         <SectionTitle className="is-4 is-marginless" title="Location" />
         <p>I currently live in sunny Indio, California.</p>
       </Section>
-      <Section>
+      {/* <Section>
         <SectionTitle className="is-4 is-marginless" title="Tech Stack" />
         <p>
           For the web dev nerds out there, I have been into ReactJS,{" "}
@@ -47,7 +47,7 @@ export default function NowPage() {
           </a>{" "}
           these days.
         </p>{" "}
-      </Section>
+      </Section> */}
       {/* <Section>
                 <SectionTitle className="is-4 is-marginless" title="News" />
                 <p>
@@ -58,7 +58,7 @@ export default function NowPage() {
       <SpotifyPlaysSection />
       <Section>
         <p>
-          <i>Last updated January 28, 2019</i>
+          <i>Last updated June 10, 2020</i>
         </p>
       </Section>
     </Layout>

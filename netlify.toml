@@ -6,7 +6,3 @@
     command = "npm run dev"
 [context.development]
     environment = { NODE_ENV = "development",  GA_ID = "0" }
-[[redirects]]
-    from = "https://go-diego.netlify.com/*"
-    to = "https://godiego.me/:splat"
-    status = 301

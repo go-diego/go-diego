@@ -9,6 +9,7 @@ const Article = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const Row = styled.div`
@@ -16,7 +17,7 @@ const Row = styled.div`
 `;
 
 const Column = styled.div`
-  order: ${props => (props.isReversed ? "-1" : 0)};
+  order: ${(props) => (props.isReversed ? "-1" : 0)};
 `;
 
 export default function PostCard({
