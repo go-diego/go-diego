@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <html className="has-navbar-fixed-top">
+            <html>
                 <Head>{this.props.styleTags}</Head>
                 <body>
                     <Main />

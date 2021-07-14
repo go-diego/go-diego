@@ -5,6 +5,7 @@ import LeadSection from "../components/LeadSection";
 import ExperienceSection from "../components/ExperienceSection";
 import EducationSection from "../components/EducationSection";
 import ShowcaseSection from "../components/ShowcaseSection";
+import SpotifyPlaysSection from "../components/SpotifyPlaysSection";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <ExperienceSection />
       <EducationSection />
       <ShowcaseSection />
+      <SpotifyPlaysSection/>
     </Layout>
   );
 }

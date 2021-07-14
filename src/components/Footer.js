@@ -17,38 +17,6 @@ export default function Footer() {
                 </span>{" "}
                 in the Coachella Valley
             </p>
-            <p>
-                Powered by{" "}
-                <span>
-                    <a
-                        className="has-text-weight-bold has-text-light"
-                        href="https://bulma.io"
-                        target="_blank"
-                        rel="noopener">
-                        Bulma
-                    </a>
-                </span>{" "}
-                +{" "}
-                <span>
-                    <a
-                        className="has-text-weight-bold has-text-light"
-                        href="https://nextjs.org/"
-                        target="_blank"
-                        rel="noopener">
-                        NextJS
-                    </a>
-                </span>{" "}
-                +{" "}
-                <span>
-                    <a
-                        className="has-text-weight-bold has-text-light"
-                        href="https://www.netlify.com/"
-                        target="_blank"
-                        rel="noopener">
-                        Netlify
-                    </a>
-                </span>
-            </p>
         </StyledFooter>
     );
 }

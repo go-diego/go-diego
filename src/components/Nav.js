@@ -21,7 +21,7 @@ const NavbarItem = styled.a`
 export default function Nav() {
   return (
     <nav
-      className="has-shadow-small navbar has-background-white is-fixed-top is-flex"
+      className="has-shadow-small navbar has-background-white is-flex"
       role="navigation"
       aria-label="main navigation">
       <div className="navbar-brand">
@@ -30,11 +30,11 @@ export default function Nav() {
         </a>
       </div>
       <NavbarEnd>
-        <NavbarItem
+        {/* <NavbarItem
           href="/now"
           className="navbar-item heading has-text-weight-bold is-size-7">
           Now
-        </NavbarItem>
+        </NavbarItem> */}
         {/* <NavbarItem
                     href="mailto:hola@godiego.me"
                     className="has-background-light navbar-item">
