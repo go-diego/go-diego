@@ -6,7 +6,9 @@ import {
   ListItem,
   ListItemAvatar,
   Avatar,
-  ListItemText
+  ListItemText,
+  makeStyles,
+  createStyles
 } from "@material-ui/core";
 
 const experience = [
@@ -22,9 +24,10 @@ const experience = [
 ];
 
 const EducationSection = () => {
+  const classes = useStyles();
   return (
     <Box component="section" py={5}>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" component="h3" gutterBottom>
         Education
       </Typography>
       <List component="div" disablePadding>
@@ -34,28 +37,26 @@ const EducationSection = () => {
             component="div"
             disableGutters>
             <ListItemAvatar>
-              <Avatar src={item.logo} />
+              <Avatar alt={item.institution} src={item.logo} />
             </ListItemAvatar>
             <ListItemText
               primary={item.institution}
+              primaryTypographyProps={{
+                className: classes.primaryText
+              }}
               secondaryTypographyProps={{
-                component: "div"
+                component: "div",
+                color: "textPrimary"
               }}
               secondary={
                 <Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="textSecondary">
+                  <Typography component="span" variant="body2">
                     {item.degree}
                   </Typography>
                   &nbsp; &bull; &nbsp;
                   {item.minors.map((minor, i) => (
                     <Fragment key={minor}>
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        color="textSecondary">
+                      <Typography component="span" variant="body2">
                         {minor}
                       </Typography>
                       {i !== item.minors.length - 1 && (
@@ -75,5 +76,11 @@ const EducationSection = () => {
     </Box>
   );
 };
+
+const useStyles = makeStyles(() => ({
+  primaryText: {
+    fontWeight: "bold"
+  }
+}));
 
 export default EducationSection;

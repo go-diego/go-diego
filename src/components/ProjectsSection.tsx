@@ -145,7 +145,7 @@ const ProjectsSection = () => {
   const classes = useStyles();
   return (
     <Box component="section" py={5}>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" component="h3" gutterBottom>
         Projects
       </Typography>
       <Box py={3}>
@@ -173,6 +173,7 @@ const ProjectsSection = () => {
                   <CardActionArea
                     href={projects[key].url}
                     target="_blank"
+                    rel="noreferrer"
                     className={classes.cardActionArea}>
                     <CardMedia
                       className={classes.cardMedia}
@@ -181,7 +182,7 @@ const ProjectsSection = () => {
                     />
                     <CardContent className={classes.cardContent}>
                       <Box pb={3}>
-                        <Typography gutterBottom variant="h6">
+                        <Typography gutterBottom variant="h6" component="p">
                           {projects[key].title}
                         </Typography>
                         <Typography

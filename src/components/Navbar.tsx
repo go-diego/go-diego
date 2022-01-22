@@ -19,7 +19,7 @@ const Navbar = () => {
       elevation={1}>
       <Container maxWidth="sm">
         <Toolbar disableGutters>
-          <Avatar src="/display.jpeg" />
+          <Avatar alt="Diego Bernal" src="/display.jpeg" />
           <div className={classes.spacer} />
           <IconButton
             href="https://twitter.com/diegocodesxyz"
@@ -27,7 +27,7 @@ const Navbar = () => {
             rel="noopener"
             size="medium"
             className={classes.navbarButton}
-            aria-label="menu">
+            aria-label="twitter">
             <Twitter />
           </IconButton>
           <IconButton
@@ -36,7 +36,7 @@ const Navbar = () => {
             rel="noopener"
             size="medium"
             className={classes.navbarButton}
-            aria-label="menu">
+            aria-label="github">
             <GitHub />
           </IconButton>
           <IconButton
@@ -45,14 +45,14 @@ const Navbar = () => {
             rel="noopener"
             size="medium"
             className={classes.navbarButton}
-            aria-label="menu">
+            aria-label="linkedin">
             <LinkedIn />
           </IconButton>
           <IconButton
             href="mailto:hola@godiego.me"
             size="medium"
             className={classes.navbarButton}
-            aria-label="menu">
+            aria-label="email">
             <Email />
           </IconButton>
         </Toolbar>

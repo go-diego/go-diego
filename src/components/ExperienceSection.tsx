@@ -87,7 +87,7 @@ const ExperienceSection = () => {
   const classes = useStyles();
   return (
     <Box component="section" py={5}>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" component="h3" gutterBottom>
         Experience
       </Typography>
       <List component="div" disablePadding>
@@ -95,23 +95,26 @@ const ExperienceSection = () => {
           <Fragment key={`experience-li-${index}`}>
             <ListItem component="div" disableGutters>
               <ListItemAvatar>
-                <Avatar src={item.companyLogo} />
+                <Avatar alt={item.company} src={item.companyLogo} />
               </ListItemAvatar>
               <ListItemText
                 primary={item.title}
+                primaryTypographyProps={{
+                  className: classes.primaryText
+                }}
                 secondary={
                   <Fragment>
                     <Typography
                       component="span"
                       variant="body2"
-                      color="textSecondary">
+                      color="textPrimary">
                       {item.company}
                     </Typography>
                     &nbsp; &bull; &nbsp;
                     <Typography
                       component="span"
                       variant="body2"
-                      color="textSecondary">
+                      color="textPrimary">
                       {`${item.startDate} - ${item.endDate}`}
                     </Typography>
                   </Fragment>
@@ -144,6 +147,9 @@ const ExperienceSection = () => {
 
 const useStyles = makeStyles((theme) =>
   createStyles({
+    primaryText: {
+      fontWeight: "bold"
+    },
     chip: {
       [theme.breakpoints.up("sm")]: {
         marginRight: theme.spacing(0.5),

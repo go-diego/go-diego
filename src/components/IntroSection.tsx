@@ -29,6 +29,7 @@ const IntroSection = () => {
       <Typography
         color="textSecondary"
         variant="h6"
+        component="h2"
         align="center"
         gutterBottom
         className={classes.subtitle}>
