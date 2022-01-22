@@ -1,8 +1,2 @@
-[build]
-    publish = "out"
-    command = "npm run export"
-    functions = "functions"
-[[redirects]]
-    from = "https://go-diego.netlify.com/*"
-    to = "https://godiego.me/:splat"
-    status = 301
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
