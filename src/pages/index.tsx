@@ -1,7 +1,7 @@
 import type {NextPage} from "next";
 import {Container, makeStyles, createStyles, Theme} from "@material-ui/core";
 
-// import SpotifySection from "components/SpotifySection";
+import SpotifySection from "components/SpotifySection";
 import IntroSection from "components/IntroSection";
 import ExperienceSection from "components/ExperienceSection";
 import EducationSection from "components/EducationSection";
@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
       <ExperienceSection />
       <EducationSection />
       <ProjectsSection />
-      {/* <SpotifySection /> */}
+      <SpotifySection />
     </Container>
   );
 };

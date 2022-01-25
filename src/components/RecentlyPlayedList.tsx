@@ -16,6 +16,9 @@ import useSWR from "swr";
 import {fetcher} from "lib/helpers";
 import {RecentlyPlayed} from "types";
 import {formatDistanceToNow} from "date-fns";
+import {Fragment} from "react";
+
+const TRACK_LIMIT = 5;
 
 const RecentlyPlayedList = () => {
   const classes = useStyles();
@@ -23,7 +26,6 @@ const RecentlyPlayedList = () => {
     "/api/recently-played",
     fetcher
   );
-  console.log(data);
 
   const uniqueTracks = data
     ? data.filter((track, pos, arr) => {
@@ -32,49 +34,58 @@ const RecentlyPlayedList = () => {
     : [];
 
   return (
-    <>
-      {error && <Typography>Something went wrong 🤔</Typography>}
-      {data && (
-        <List
-          className={classes.list}
-          component="div"
-          key="recently-played-list">
-          <ListSubheader component="div" disableGutters>
-            <Box pl={1}>Recently Played</Box>
-            <Divider component="div" />
-          </ListSubheader>
-          {uniqueTracks.slice(0, 10).map((track, index) => {
-            return (
-              <>
-                <ListItem button href={track.songUrl} key={track.songUrl}>
-                  <ListItemAvatar>
-                    <Avatar
-                      classes={{
-                        root: classes.avatar
-                      }}
-                      src={track.imageUrl}
+    <Box py={5}>
+      <Typography variant="h5" component="p" gutterBottom>
+        Recent Tracks
+      </Typography>
+      <Box pt={3}>
+        {error && (
+          <Typography>Something went wrong loading recent tracks 🤔</Typography>
+        )}
+        {!error && data && (
+          <List
+            className={classes.list}
+            component="div"
+            key="recently-played-list">
+            {uniqueTracks.slice(0, TRACK_LIMIT).map((track, index) => {
+              return (
+                <Fragment key={track.songUrl}>
+                  <ListItem
+                    component="a"
+                    button
+                    href={track.songUrl}
+                    target="_blank"
+                    rel="noreferrer">
+                    <ListItemAvatar>
+                      <Avatar
+                        classes={{
+                          root: classes.avatar
+                        }}
+                        src={track.imageUrl}
+                        alt={track.title}
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={track.title}
+                      secondary={`${track.artist} - ${formatDistanceToNow(
+                        new Date(track.played_at)
+                      )} ago`}
                     />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={track.title}
-                    secondary={`${track.artist} - ${formatDistanceToNow(
-                      new Date(track.played_at)
-                    )} ago`}
-                  />
-                </ListItem>
-                {index !== 9 && (
-                  <Divider
-                    variant="inset"
-                    component="div"
-                    key={`recently-played-list-divider-${index}`}
-                  />
-                )}
-              </>
-            );
-          })}
-        </List>
-      )}
-    </>
+                  </ListItem>
+                  {index !== TRACK_LIMIT - 1 && (
+                    <Divider
+                      variant="inset"
+                      component="div"
+                      key={`recently-played-list-divider-${index}`}
+                    />
+                  )}
+                </Fragment>
+              );
+            })}
+          </List>
+        )}
+      </Box>
+    </Box>
   );
 };
 
