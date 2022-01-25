@@ -9,14 +9,14 @@ import {
   Theme,
   makeStyles,
   createStyles,
-  ListSubheader,
   Box
 } from "@material-ui/core";
+import {formatDistanceToNow} from "date-fns";
+import {Fragment} from "react";
 import useSWR from "swr";
 import {fetcher} from "lib/helpers";
 import {RecentlyPlayed} from "types";
-import {formatDistanceToNow} from "date-fns";
-import {Fragment} from "react";
+import SpotifyIcon from "./SpotifyIcon";
 
 const TRACK_LIMIT = 5;
 
@@ -35,7 +35,14 @@ const RecentlyPlayedList = () => {
 
   return (
     <Box py={5}>
-      <Typography variant="h5" component="p" gutterBottom>
+      <Typography
+        variant="h5"
+        component="p"
+        gutterBottom
+        className={classes.sectionHeader}>
+        <Box pr={1} display="flex" alignItems="center">
+          <SpotifyIcon />
+        </Box>
         Recent Tracks
       </Typography>
       <Box pt={3}>
@@ -97,6 +104,10 @@ const useStyles = makeStyles((theme: Theme) =>
     avatar: {
       width: 50,
       height: 50
+    },
+    sectionHeader: {
+      display: "flex",
+      alignItems: "center"
     }
   })
 );
