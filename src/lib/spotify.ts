@@ -31,7 +31,7 @@ const getAccessToken = async () => {
 export const getTopItems = async ({
   type,
   limit = 10,
-  time_range = "medium_term"
+  time_range = "long_term"
 }: TopOptions) => {
   const {access_token} = await getAccessToken();
   const options = {
