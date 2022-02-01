@@ -39,7 +39,7 @@ const experience = [
   },
   {
     title: "Web Developer",
-    company: "Readylink Healthcare",
+    company: "Patient Care Analytics",
     companyLogo: "/pca.png",
     location: "Thousand Palms, CA ",
     startDate: "Jun 2014",
