@@ -16,7 +16,7 @@ export default function TopArtistsGrid() {
     <Box py={5}>
       <Typography
         variant="h5"
-        component="p"
+        component="div"
         gutterBottom
         className={classes.sectionHeader}>
         <Box pr={1} display="flex" alignItems="center">

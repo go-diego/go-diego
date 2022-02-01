@@ -9,8 +9,10 @@ import {
   ListItemText,
   Chip,
   makeStyles,
-  createStyles
+  createStyles,
+  Button
 } from "@material-ui/core";
+import {CloudDownload} from "@material-ui/icons";
 
 const experience = [
   {
@@ -87,8 +89,21 @@ const ExperienceSection = () => {
   const classes = useStyles();
   return (
     <Box component="section" py={5}>
-      <Typography variant="h5" component="h3" gutterBottom>
+      <Typography
+        variant="h5"
+        component="h3"
+        gutterBottom
+        className={classes.header}>
         Experience
+        <Button
+          href="/assets/diego-bernal-resume.pdf"
+          target="_blank"
+          className={classes.button}
+          startIcon={<CloudDownload />}
+          size="small"
+          variant="outlined">
+          Resume
+        </Button>
       </Typography>
       <List component="div" disablePadding>
         {experience.map((item, index) => (
@@ -157,7 +172,12 @@ const useStyles = makeStyles((theme) =>
       },
       marginRight: theme.spacing(0.25),
       marginTop: theme.spacing(0.25)
-    }
+    },
+    header: {
+      display: "flex",
+      justifyContent: "space-between"
+    },
+    button: {}
   })
 );
 

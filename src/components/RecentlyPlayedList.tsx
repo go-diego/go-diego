@@ -37,7 +37,7 @@ const RecentlyPlayedList = () => {
     <Box py={5}>
       <Typography
         variant="h5"
-        component="p"
+        component="h3"
         gutterBottom
         className={classes.sectionHeader}>
         <Box pr={1} display="flex" alignItems="center">
