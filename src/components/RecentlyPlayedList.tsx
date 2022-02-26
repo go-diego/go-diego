@@ -33,6 +33,8 @@ const RecentlyPlayedList = () => {
       })
     : [];
 
+  const isLoading = !data && !error;
+
   return (
     <Box py={5}>
       <Typography
@@ -46,6 +48,7 @@ const RecentlyPlayedList = () => {
         Recent Tracks
       </Typography>
       <Box pt={3}>
+        {isLoading && <Typography>Loading...</Typography>}
         {error && (
           <Typography>Something went wrong loading recent tracks 🤔</Typography>
         )}

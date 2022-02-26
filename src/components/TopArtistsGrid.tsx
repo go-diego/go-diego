@@ -12,6 +12,8 @@ import SpotifyIcon from "./SpotifyIcon";
 export default function TopArtistsGrid() {
   const classes = useStyles();
   const {data, error} = useSWR<Artist[]>("/api/top-artists", fetcher);
+  const isLoading = !data && !error;
+
   return (
     <Box py={5}>
       <Typography
@@ -25,6 +27,7 @@ export default function TopArtistsGrid() {
         Top Artists
       </Typography>
       <Box pt={3}>
+        {isLoading && <Typography>Loading...</Typography>}
         {error && (
           <Typography>Something went wrong loading top artists 🤔</Typography>
         )}

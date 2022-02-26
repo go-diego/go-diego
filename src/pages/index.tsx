@@ -7,6 +7,7 @@ import ExperienceSection from "components/ExperienceSection";
 import EducationSection from "components/EducationSection";
 import ProjectsSection from "components/ProjectsSection";
 import Meta from "components/Meta";
+import NftCollectionSection from "components/NftCollectionSection";
 
 const HomePage: NextPage = () => {
   const classes = useStyles();
@@ -17,6 +18,7 @@ const HomePage: NextPage = () => {
       <ExperienceSection />
       <EducationSection />
       <ProjectsSection />
+      <NftCollectionSection />
       <SpotifySection />
     </Container>
   );
