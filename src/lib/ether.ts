@@ -38,8 +38,12 @@ const getTokenURI = async (address: string, tokenId: string) => {
   return metadata;
 };
 
+export const getWalletAddressFromENS = async (ens: string) => {
+  return provider.resolveName(ens);
+};
+
 export const getNFTs = async (ens: string): Promise<NFT[]> => {
-  const address = await provider.resolveName(ens);
+  const address = await getWalletAddressFromENS(ens);
   if (!address) throw Error("Could not resolve name");
   const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
   const response = await (await fetch(url)).json();

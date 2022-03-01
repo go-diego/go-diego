@@ -1,4 +1,3 @@
-import {makeStyles, createStyles} from "@material-ui/core/styles";
 import {
   Typography,
   Box,
@@ -8,18 +7,23 @@ import {
   useMediaQuery
 } from "@material-ui/core";
 import useSWR from "swr";
-import {getAvatar, getNFTs} from "lib/ether";
+import {getAvatar, getNFTs, getWalletAddressFromENS} from "lib/ether";
+import NftCollectionSectionHeader from "./NftCollectionSectionHeader";
 
 const ENS = "diegoo.eth";
 
 const NftCollectionSection = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const classes = useStyles();
 
   const {data: avatarUrl} = useSWR([ENS, "get-avatar"], getAvatar);
+  const {data: walletAddress} = useSWR(
+    [ENS, "get-address"],
+    getWalletAddressFromENS
+  );
   const {data, error} = useSWR([ENS, "get-nfts"], getNFTs);
-  const isLoading = !data && !error;
+
+  const isDataLoaded = data && avatarUrl && walletAddress;
 
   return (
     <Box component="section" py={5}>
@@ -28,26 +32,14 @@ const NftCollectionSection = () => {
       </Typography>
       <Box py={3}>
         {error && <Typography>Something went wrong loading NFTs 🤔</Typography>}
-        {isLoading && <Typography>Loading...</Typography>}
-        {!isLoading && (
+        {!isDataLoaded && <Typography>Loading...</Typography>}
+        {!error && isDataLoaded && (
           <>
-            <Typography
-              gutterBottom
-              component="div"
-              color="textSecondary"
-              className={classes.sectionHeader}>
-              <Box pr={1} display="flex" alignItems="center">
-                {avatarUrl && (
-                  <img
-                    src={avatarUrl}
-                    width={24}
-                    height={24}
-                    className={classes.avatar}
-                  />
-                )}
-              </Box>
-              {ENS}
-            </Typography>
+            <NftCollectionSectionHeader
+              ens={ENS}
+              avatarUrl={avatarUrl}
+              address={walletAddress}
+            />
             <Box pt={1}>
               <ImageList cols={isSmallScreen ? 2 : 3} component="div" gap={2}>
                 {data &&
@@ -72,17 +64,5 @@ const NftCollectionSection = () => {
     </Box>
   );
 };
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    avatar: {
-      borderRadius: "50%"
-    },
-    sectionHeader: {
-      display: "flex",
-      alignItems: "center"
-    }
-  })
-);
 
 export default NftCollectionSection;
