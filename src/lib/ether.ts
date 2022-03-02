@@ -15,8 +15,9 @@ const getTokenURI = async (address: string, tokenId: string) => {
 
   let metadata: Pick<NFT, "image" | "description" | "name"> | null = null;
   if (dataUri.indexOf("data:application/json") > -1) {
-    const base64 = atob(dataUri.slice(dataUri.indexOf(",") + 1));
-    metadata = JSON.parse(base64);
+    const base64 = dataUri.slice(dataUri.indexOf(",") + 1);
+    const buff = Buffer.from(base64, "base64");
+    metadata = JSON.parse(buff.toString());
     return metadata;
   }
 
