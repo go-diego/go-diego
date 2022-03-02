@@ -48,9 +48,21 @@ export const getNFTs = async (ens: string): Promise<NFT[]> => {
   if (!address) throw Error("Could not resolve name");
   const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
   const response = await (await fetch(url)).json();
+
+  const nftsThatWereTransferredOut = response.result
+    .filter((tx: any) => tx.to.toLowerCase() !== address.toLowerCase())
+    .map((tx: any) => tx.tokenID);
+
   const promises = response.result
-    // @ts-ignore
-    .filter((tx) => !["ENS"].includes(tx.tokenSymbol))
+    .filter(
+      /**
+       * Remove transactions of nfts that were transferred out. Only want current nfts.
+       * Remove ens nft because it blows up tokenURI request.
+       */
+      (tx: any) =>
+        !["ENS"].includes(tx.tokenSymbol) &&
+        !nftsThatWereTransferredOut.includes(tx.tokenID)
+    )
     .map(async (tx: any) => {
       const data = await getTokenURI(tx.contractAddress, tx.tokenID);
       return {
