@@ -47,7 +47,6 @@ export const getNFTs = async (ens: string): Promise<NFT[]> => {
   if (!address) throw Error("Could not resolve name");
   const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
   const response = await (await fetch(url)).json();
-  console.log("tokennfttx", response);
   const promises = response.result
     // @ts-ignore
     .filter((tx) => !["ENS"].includes(tx.tokenSymbol))

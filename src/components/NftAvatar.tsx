@@ -4,6 +4,7 @@ interface NftAvatarProps {
   src: string;
   height: number | string;
   width: number | string;
+  alt: string;
 }
 
 const NftAvatar = (props: NftAvatarProps) => {

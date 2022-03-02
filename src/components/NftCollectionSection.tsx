@@ -9,6 +9,8 @@ import {
 import useSWR from "swr";
 import {getAvatar, getNFTs, getWalletAddressFromENS} from "lib/ether";
 import NftCollectionSectionHeader from "./NftCollectionSectionHeader";
+import {fetcher} from "lib/helpers";
+import {NFT} from "types";
 
 const ENS = "diegoo.eth";
 
@@ -21,7 +23,7 @@ const NftCollectionSection = () => {
     [ENS, "get-address"],
     getWalletAddressFromENS
   );
-  const {data, error} = useSWR([ENS, "get-nfts"], getNFTs);
+  const {data, error} = useSWR<NFT[]>(`/api/nfts?ens=${ENS}`, fetcher);
 
   const isDataLoaded = data && avatarUrl && walletAddress;
 
@@ -32,7 +34,7 @@ const NftCollectionSection = () => {
       </Typography>
       <Box py={3}>
         {error && <Typography>Something went wrong loading NFTs 🤔</Typography>}
-        {!isDataLoaded && <Typography>Loading...</Typography>}
+        {!error && !isDataLoaded && <Typography>Loading...</Typography>}
         {!error && isDataLoaded && (
           <>
             <NftCollectionSectionHeader

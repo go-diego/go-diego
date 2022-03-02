@@ -24,7 +24,14 @@ const NftCollectionSectionHeader = (props: NftCollectionSectionHeaderProps) => {
   return (
     <Typography gutterBottom component="div" className={classes.root}>
       <Box pr={1} display="flex" alignItems="center">
-        {avatarUrl && <NftAvatar src={avatarUrl} width={60} height={60} />}
+        {avatarUrl && (
+          <NftAvatar
+            alt={`${ens} pfp`}
+            src={avatarUrl}
+            width={60}
+            height={60}
+          />
+        )}
       </Box>
       <Box display="flex" flexDirection="column" justifyContent="center">
         <Typography className={classes.title}>{ens}</Typography>
