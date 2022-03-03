@@ -9,6 +9,10 @@ export const getAvatar = async (ens: string) => {
   return avatar;
 };
 
+const getIpfsUrl = (rawUrl: string) => {
+  return `https://ipfs.io/ipfs/${rawUrl.slice(rawUrl.indexOf("ipfs://") + 5)}`;
+};
+
 const getTokenURI = async (address: string, tokenId: string) => {
   const contract = new ethers.Contract(address, ABI, provider);
   const dataUri = await contract.tokenURI(tokenId);
@@ -21,17 +25,13 @@ const getTokenURI = async (address: string, tokenId: string) => {
     return metadata;
   }
 
-  let requestUrl = dataUri;
-  if (dataUri.indexOf("ipfs") > -1) {
-    requestUrl = `https://ipfs.io/ipfs/${dataUri.slice(
-      dataUri.indexOf("ipfs") + 5
-    )}`;
-  }
-
+  const requestUrl =
+    dataUri.indexOf("ipfs://") > -1 ? getIpfsUrl(dataUri) : dataUri;
   const res = await fetch(requestUrl);
   const data = await res.json();
   metadata = {
-    image: data.image,
+    image:
+      data.image.indexOf("ipfs://") > -1 ? getIpfsUrl(data.image) : data.image,
     description: data.description,
     name: data.name
   };
@@ -46,8 +46,9 @@ export const getWalletAddressFromENS = async (ens: string) => {
 export const getNFTs = async (ens: string): Promise<NFT[]> => {
   const address = await getWalletAddressFromENS(ens);
   if (!address) throw Error("Could not resolve name");
-  const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=asc&apikey=${process.env.ETHERSCAN_API_KEY}`;
+  const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=desc&apikey=${process.env.ETHERSCAN_API_KEY}`;
   const response = await (await fetch(url)).json();
+  // console.log("response", response);
 
   const nftsThatWereTransferredOut = response.result
     .filter((tx: any) => tx.to.toLowerCase() !== address.toLowerCase())
