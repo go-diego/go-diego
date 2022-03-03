@@ -65,13 +65,22 @@ export const getNFTs = async (ens: string): Promise<NFT[]> => {
         !nftsThatWereTransferredOut.includes(tx.tokenID)
     )
     .map(async (tx: any) => {
-      const data = await getTokenURI(tx.contractAddress, tx.tokenID);
-      return {
-        ...data,
+      const partialData = {
         tokenName: tx.tokenName,
         tokenID: tx.tokenID,
         tokenSymbol: tx.tokenSymbol,
         contractAddress: tx.contractAddress
+      };
+
+      const data = await getTokenURI(tx.contractAddress, tx.tokenID).catch(
+        () => {
+          return partialData;
+        }
+      );
+
+      return {
+        ...data,
+        ...partialData
       };
     });
   const nftList = await Promise.all(promises);

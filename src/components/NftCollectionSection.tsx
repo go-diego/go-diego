@@ -47,7 +47,24 @@ const NftCollectionSection = () => {
                 {data &&
                   data.map((item) => (
                     <ImageListItem key={item.tokenID}>
-                      <img src={item.image} alt={item.name} />
+                      {!item.image && (
+                        <Box
+                          p={1}
+                          display="flex"
+                          justifyContent="center"
+                          border="1px solid #ccc"
+                          height="100%">
+                          <Typography variant="caption">
+                            {`Could not load image for ${item.tokenName} ${item.tokenID} for some reason 🤔. Try refreshing the page.`}
+                          </Typography>
+                        </Box>
+                      )}
+                      {item.image && (
+                        <img
+                          src={item.image}
+                          alt={`${item.tokenName} ${item.tokenID}`}
+                        />
+                      )}
                       {/* <ImageListItemBar
                   title={item.name}
                   position="bottom"
