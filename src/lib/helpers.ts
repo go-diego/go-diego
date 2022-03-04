@@ -11,3 +11,10 @@ export const fetcher = async (url: string) => {
 
   return res.json();
 };
+
+export const Exception = (message: string, info?: any) => {
+  const error = new Error(message);
+  // @ts-ignore
+  error.info = info;
+  throw error;
+};

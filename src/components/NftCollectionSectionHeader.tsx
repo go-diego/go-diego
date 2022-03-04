@@ -3,6 +3,8 @@ import {Typography, Box, Chip, Tooltip} from "@material-ui/core";
 import CopyIcon from "@material-ui/icons/FileCopy";
 import CheckIcon from "@material-ui/icons/Done";
 import {useState} from "react";
+import {Skeleton} from "@material-ui/lab";
+
 import NftAvatar from "./NftAvatar";
 
 interface NftCollectionSectionHeaderProps {
@@ -10,6 +12,9 @@ interface NftCollectionSectionHeaderProps {
   ens: string;
   address: string;
 }
+
+const AVATAR_HEIGHT = 80;
+const AVATAR_WIDTH = 80;
 
 const NftCollectionSectionHeader = (props: NftCollectionSectionHeaderProps) => {
   const {avatarUrl, ens, address} = props;
@@ -22,14 +27,14 @@ const NftCollectionSectionHeader = (props: NftCollectionSectionHeaderProps) => {
   };
 
   return (
-    <Typography gutterBottom component="div" className={classes.root}>
+    <Box display="flex" alignItems="center">
       <Box pr={1} display="flex" alignItems="center">
         {avatarUrl && (
           <NftAvatar
             alt={`${ens} pfp`}
             src={avatarUrl}
-            width={60}
-            height={60}
+            width={AVATAR_WIDTH}
+            height={AVATAR_HEIGHT}
           />
         )}
       </Box>
@@ -47,16 +52,34 @@ const NftCollectionSectionHeader = (props: NftCollectionSectionHeaderProps) => {
           />
         </Tooltip>
       </Box>
-    </Typography>
+    </Box>
+  );
+};
+
+export const NftCollectionSectionHeaderSkeleton = () => {
+  return (
+    <Box display="flex" alignItems="center">
+      <Box pr={1} display="flex" alignItems="center">
+        <Skeleton
+          variant="circle"
+          width={AVATAR_WIDTH}
+          height={AVATAR_HEIGHT}
+        />
+      </Box>
+      <Box display="flex" flexDirection="column" justifyContent="center">
+        <Typography variant="h6" component="div">
+          <Skeleton variant="text" width={200} />
+        </Typography>
+        <Typography variant="h3" component="div">
+          <Skeleton variant="text" width={200} />
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
-      display: "flex",
-      alignItems: "center"
-    },
     title: {
       fontWeight: "bold"
     }

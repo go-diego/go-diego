@@ -11,7 +11,9 @@ import SpotifyIcon from "./SpotifyIcon";
 
 export default function TopArtistsGrid() {
   const classes = useStyles();
-  const {data, error} = useSWR<Artist[]>("/api/top-artists", fetcher);
+  const {data, error} = useSWR<Artist[]>("/api/top-artists", fetcher, {
+    revalidateOnFocus: false
+  });
   const isLoading = !data && !error;
 
   return (
