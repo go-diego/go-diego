@@ -20,7 +20,7 @@ const NftGridList = ({nfts}: NftGridListProps) => {
   return (
     <ImageList cols={isSmallScreen ? 2 : 3} component="div" gap={2}>
       {nfts.map((item) => (
-        <ImageListItem key={item.tokenID}>
+        <ImageListItem component="div" key={item.tokenID}>
           {!item.image && (
             <Box
               p={1}
@@ -56,7 +56,7 @@ export const NftGridListSkeleton = () => {
   return (
     <ImageList cols={isSmallScreen ? 2 : 3} component="div" gap={2}>
       {Array.from(Array(9)).map((_, i) => (
-        <ImageListItem key={`nft-grid-skeleton-${i}`}>
+        <ImageListItem component="div" key={`nft-grid-skeleton-${i}`}>
           <Skeleton variant="rect" height="100%" />
         </ImageListItem>
       ))}

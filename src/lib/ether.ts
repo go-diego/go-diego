@@ -62,7 +62,7 @@ export const getNFTs = async (ens: string): Promise<NFT[]> => {
   const response = await (await fetch(url)).json();
   // console.log("response", response);
 
-  if (!response.result)
+  if (!response?.result)
     throw Exception("Could not get NFTs", {
       code: response.status
     });
