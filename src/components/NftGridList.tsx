@@ -34,7 +34,11 @@ const NftGridList = ({nfts}: NftGridListProps) => {
             </Box>
           )}
           {item.image && (
-            <img src={item.image} alt={`${item.tokenName} ${item.tokenID}`} />
+            <img
+              loading="lazy"
+              src={item.image}
+              alt={`${item.tokenName} ${item.tokenID}`}
+            />
           )}
           {/* <ImageListItemBar
                     title={item.name}

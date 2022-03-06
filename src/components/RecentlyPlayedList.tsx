@@ -73,6 +73,9 @@ const RecentlyPlayedList = () => {
                         }}
                         src={track.imageUrl}
                         alt={track.title}
+                        imgProps={{
+                          loading: "lazy"
+                        }}
                       />
                     </ListItemAvatar>
                     <ListItemText

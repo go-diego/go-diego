@@ -49,7 +49,7 @@ export default function TopArtistsGrid() {
                     {children}
                   </a>
                 )}>
-                <img src={item.imageUrl} alt={item.name} />
+                <img loading="lazy" src={item.imageUrl} alt={item.name} />
                 <ImageListItemBar
                   title={item.name}
                   position="bottom"
