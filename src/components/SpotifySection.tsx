@@ -1,11 +1,11 @@
-import RecentlyPlayedList from "components/RecentlyPlayedList";
-import TopArtistsGrid from "./TopArtistsGrid";
+import RecentlyPlayedTracksSection from "./RecentlyPlayedTracksSection";
+import TopArtistsSection from "./TopArtistsSection";
 
 const SpotifySection = () => {
   return (
     <>
-      <RecentlyPlayedList />
-      <TopArtistsGrid />
+      <RecentlyPlayedTracksSection />
+      <TopArtistsSection />
     </>
   );
 };
