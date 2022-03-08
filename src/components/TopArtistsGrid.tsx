@@ -1,13 +1,16 @@
+import Image from "next/image";
 import {createStyles, Theme, makeStyles} from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import Box from "@material-ui/core/Box";
 import useSWR from "swr";
+
 import {fetcher} from "lib/helpers";
 import {Artist} from "types";
 import {Typography} from "@material-ui/core";
 import SpotifyIcon from "./SpotifyIcon";
+import {blurPlaceHolderDataUrl} from "../constants";
 
 export default function TopArtistsGrid() {
   const classes = useStyles();
@@ -49,7 +52,15 @@ export default function TopArtistsGrid() {
                     {children}
                   </a>
                 )}>
-                <img loading="lazy" src={item.imageUrl} alt={item.name} />
+                {/* <img loading="lazy" src={item.imageUrl} alt={item.name} /> */}
+                <Image
+                  src={item.imageUrl}
+                  alt={item.name}
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={blurPlaceHolderDataUrl}
+                />
                 <ImageListItemBar
                   title={item.name}
                   position="bottom"

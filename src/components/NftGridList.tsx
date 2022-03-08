@@ -6,9 +6,13 @@ import {
   useTheme,
   useMediaQuery
 } from "@material-ui/core";
+import Image from "next/image";
 import {Skeleton} from "@material-ui/lab";
 
 import {NFT} from "types";
+import {blurPlaceHolderDataUrl} from "../constants";
+
+export const nftImageSrc = ["ipfs.io", "gateway.pinata.cloud", "base64"];
 
 interface NftGridListProps {
   nfts: NFT[];
@@ -17,6 +21,8 @@ interface NftGridListProps {
 const NftGridList = ({nfts}: NftGridListProps) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const shouldOptimize = (src: string) =>
+    nftImageSrc.some((s) => src.includes(s));
   return (
     <ImageList cols={isSmallScreen ? 2 : 3} component="div" gap={2}>
       {nfts.map((item) => (
@@ -34,11 +40,24 @@ const NftGridList = ({nfts}: NftGridListProps) => {
             </Box>
           )}
           {item.image && (
-            <img
-              loading="lazy"
-              src={item.image}
-              alt={`${item.tokenName} ${item.tokenID}`}
-            />
+            <>
+              {!shouldOptimize(item.image) ? (
+                <img
+                  loading="lazy"
+                  src={item.image}
+                  alt={`${item.tokenName} ${item.tokenID}`}
+                />
+              ) : (
+                <Image
+                  src={item.image}
+                  alt={`${item.tokenName} ${item.tokenID}`}
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={blurPlaceHolderDataUrl}
+                />
+              )}
+            </>
           )}
           {/* <ImageListItemBar
                     title={item.name}

@@ -11,14 +11,18 @@ import {
   createStyles,
   Box
 } from "@material-ui/core";
+import Image from "next/image";
 import {formatDistanceToNow} from "date-fns";
 import {Fragment} from "react";
 import useSWR from "swr";
+
 import {fetcher} from "lib/helpers";
 import {RecentlyPlayed} from "types";
 import SpotifyIcon from "./SpotifyIcon";
+import {blurPlaceHolderDataUrl} from "../constants";
 
 const TRACK_LIMIT = 5;
+const AVATAR_SIZE = 50;
 
 const RecentlyPlayedList = () => {
   const classes = useStyles();
@@ -73,9 +77,20 @@ const RecentlyPlayedList = () => {
                         }}
                         src={track.imageUrl}
                         alt={track.title}
-                        imgProps={{
-                          loading: "lazy"
-                        }}
+                        // imgProps={{
+                        //   loading: "lazy"
+                        // }}
+                        component={({children, ...rest}) => (
+                          <Image
+                            src={track.imageUrl}
+                            alt={track.title}
+                            height={AVATAR_SIZE}
+                            width={AVATAR_SIZE}
+                            placeholder="blur"
+                            blurDataURL={blurPlaceHolderDataUrl}
+                            {...rest}
+                          />
+                        )}
                       />
                     </ListItemAvatar>
                     <ListItemText
@@ -108,8 +123,8 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.background.paper
     },
     avatar: {
-      width: 50,
-      height: 50
+      width: AVATAR_SIZE,
+      height: AVATAR_SIZE
     },
     sectionHeader: {
       display: "flex",
