@@ -1,4 +1,5 @@
 import {Fragment} from "react";
+import Image from "next/image";
 import {
   Box,
   Typography,
@@ -7,16 +8,17 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
-  makeStyles,
-  createStyles
+  makeStyles
 } from "@material-ui/core";
+
+import csusbLogo from "../../public/csusb.png";
 
 const experience = [
   {
     degree: "B.S. Computer Engineering",
     minors: ["Minor in Mathematics", "Minor in Physics"],
     institution: "CSU San Bernardino",
-    logo: "/csusb.png",
+    logo: csusbLogo,
     location: "San Bernardino, CA ",
     startDate: "Sept 2009",
     endDate: "Jun 2014"
@@ -37,7 +39,19 @@ const EducationSection = () => {
             component="div"
             disableGutters>
             <ListItemAvatar>
-              <Avatar alt={item.institution} src={item.logo} />
+              <Avatar
+                component={(props) => (
+                  <Box position="relative" {...props} bgcolor="unset">
+                    <Image
+                      placeholder="blur"
+                      layout="fill"
+                      objectFit="cover"
+                      alt={item.institution}
+                      src={item.logo}
+                    />
+                  </Box>
+                )}
+              />
             </ListItemAvatar>
             <ListItemText
               primary={item.institution}

@@ -1,4 +1,5 @@
 import {Fragment} from "react";
+import Image from "next/image";
 import {
   Box,
   Typography,
@@ -14,11 +15,14 @@ import {
 } from "@material-ui/core";
 import {CloudDownload} from "@material-ui/icons";
 
+import clskLogo from "../../public/clsk.png";
+import pcaLogo from "../../public/pca.png";
+
 const experience = [
   {
     title: "Front-End Engineer",
     company: "CleanSpark",
-    companyLogo: "/clsk.png",
+    companyLogo: clskLogo,
     location: "San Diego, CA ",
     startDate: "Oct 2019",
     endDate: "Present",
@@ -40,7 +44,7 @@ const experience = [
   {
     title: "Web Developer",
     company: "Patient Care Analytics",
-    companyLogo: "/pca.png",
+    companyLogo: pcaLogo,
     location: "Thousand Palms, CA ",
     startDate: "Jun 2014",
     endDate: "Oct 2019",
@@ -110,7 +114,19 @@ const ExperienceSection = () => {
           <Fragment key={`experience-li-${index}`}>
             <ListItem component="div" disableGutters>
               <ListItemAvatar>
-                <Avatar alt={item.company} src={item.companyLogo} />
+                <Avatar
+                  component={(props) => (
+                    <Box position="relative" {...props} bgcolor="unset">
+                      <Image
+                        placeholder="blur"
+                        layout="fill"
+                        objectFit="cover"
+                        alt={item.company}
+                        src={item.companyLogo}
+                      />
+                    </Box>
+                  )}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary={item.title}
