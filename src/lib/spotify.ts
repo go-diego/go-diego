@@ -1,3 +1,5 @@
+import {TimeRange} from "types";
+
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const TOP_ITEMS_ENDPOINT = `https://api.spotify.com/v1/me/top`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
@@ -6,7 +8,7 @@ const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-
 type TopOptions = {
   type: "artists" | "tracks";
   limit?: number;
-  time_range?: "long_term" | "medium_term" | "short_term";
+  time_range?: TimeRange;
 };
 
 const getAccessToken = async () => {

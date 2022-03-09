@@ -1,14 +1,16 @@
 import type {NextApiRequest, NextApiResponse} from "next";
 import {getTopItems} from "lib/spotify";
-import {Artist} from "types";
+import {Artist, TimeRange} from "types";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Artist[]>
 ) {
+  const time_range = req.query?.time_range as TimeRange;
   try {
     const response = await getTopItems({
-      type: "artists"
+      type: "artists",
+      time_range
     });
     const {items} = await response.json();
 
