@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core";
 import {Email, LinkedIn, GitHub, Twitter} from "@material-ui/icons";
 
+import Divider from "components/Divider";
+
 const Navbar = () => {
   const classes = useStyles();
   return (
@@ -16,7 +18,7 @@ const Navbar = () => {
       position="fixed"
       className={classes.appBar}
       color="primary"
-      elevation={1}>
+      elevation={0}>
       <Container maxWidth="sm">
         <Toolbar disableGutters>
           <Avatar alt="Diego Bernal" src="/display.jpeg" />
@@ -57,6 +59,7 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
       </Container>
+      <Divider />
     </AppBar>
   );
 };

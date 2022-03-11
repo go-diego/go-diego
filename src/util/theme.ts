@@ -1,5 +1,8 @@
 import {createTheme} from "@material-ui/core/styles";
 
+export const gradient =
+  "linear-gradient(45deg, rgba(5,138,162,1) 0%, rgba(179,62,148,1) 35%, rgba(65,38,48,1) 100%)";
+
 const headerFont = ["Outfit", "sans-serif"].join(",");
 const bodyFont = ["IBM Plex Sans", "sans-serif"].join(",");
 
