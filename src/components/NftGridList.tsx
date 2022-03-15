@@ -23,6 +23,7 @@ const NftGridList = ({nfts}: NftGridListProps) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const shouldOptimize = (src: string) =>
     nftImageSrc.some((s) => src.includes(s));
+
   return (
     <ImageList cols={isSmallScreen ? 2 : 3} component="div" gap={2}>
       {nfts.map((item) => (
@@ -46,6 +47,7 @@ const NftGridList = ({nfts}: NftGridListProps) => {
                   loading="lazy"
                   src={item.image}
                   alt={`${item.tokenName} ${item.tokenID}`}
+                  width="100%"
                 />
               ) : (
                 <Image
