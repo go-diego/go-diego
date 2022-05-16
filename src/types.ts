@@ -24,7 +24,24 @@ export interface NFT {
   tokenID: string;
   tokenSymbol: string;
   contractAddress: string;
+  name?: string;
+  image?: string;
+  description?: string;
+}
+
+export interface Transaction {
+  tokenName: string;
+  tokenID: string;
+  tokenSymbol: string;
+  contractAddress: string;
+  to: string;
+  from: string;
+}
+
+export interface Collection {
+  image?: string;
   name: string;
-  image: string;
   description: string;
+  address: string;
+  assets: NFT[];
 }

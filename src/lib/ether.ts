@@ -1,7 +1,12 @@
 import {ethers} from "ethers";
+import keyBy from "lodash/keyBy";
+
 import {NFT} from "types";
 import ABI from "NFT_ABI.json";
 import {Exception} from "./helpers";
+import {getNFTTransactionsByAddress} from "./etherscan";
+import {groupBy} from "lodash";
+import {getCollection} from "./opensea";
 
 const provider = ethers.getDefaultProvider("mainnet");
 
@@ -32,6 +37,8 @@ const getTokenURI = async (address: string, tokenId: string) => {
       dataUri.indexOf("ipfs://") > -1 ? getIpfsUrl(dataUri) : dataUri;
     const res = await fetch(requestUrl);
     const data = await res.json();
+    // console.log("data", data);
+
     metadata = {
       image:
         data.image.indexOf("ipfs://") > -1
@@ -55,33 +62,32 @@ export const getWalletAddressFromENS = async (ens: string) => {
   return provider.resolveName(ens);
 };
 
-export const getNFTs = async (ens: string): Promise<NFT[]> => {
+export const getNFTs = async (
+  ens: string,
+  excludeByContract?: string[]
+): Promise<NFT[]> => {
   const address = await getWalletAddressFromENS(ens);
+
   if (!address) throw Error("Could not resolve name");
-  const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${address}&sort=desc&apikey=${process.env.ETHERSCAN_API_KEY}`;
-  const response = await (await fetch(url)).json();
-  // console.log("response", response);
+  const transactions = await getNFTTransactionsByAddress(address);
+  // console.log("transactions", transactions);
 
-  if (!response?.result)
-    throw Exception("Could not get NFTs", {
-      code: response.status
-    });
+  if (!transactions) throw Exception("Could not get NFTs");
 
-  const nftsThatWereTransferredOut = response.result
-    .filter((tx: any) => tx.to.toLowerCase() !== address.toLowerCase())
-    .map((tx: any) => tx.tokenID);
+  const nftsThatWereTransferredOut = transactions
+    .filter((tx) => tx.to.toLowerCase() !== address.toLowerCase())
+    .map((tx) => tx.tokenID);
 
-  const promises = response.result
+  const promises = transactions
     .filter(
       /**
        * Remove transactions of nfts that were transferred out. Only want current nfts.
-       * Remove ens nft because it blows up tokenURI request.
        */
-      (tx: any) =>
-        !["ENS"].includes(tx.tokenSymbol) &&
-        !nftsThatWereTransferredOut.includes(tx.tokenID)
+      (tx) =>
+        !nftsThatWereTransferredOut.includes(tx.tokenID) &&
+        !excludeByContract?.includes(tx.contractAddress.toLocaleLowerCase())
     )
-    .map(async (tx: any) => {
+    .map(async (tx) => {
       const partialData = {
         tokenName: tx.tokenName,
         tokenID: tx.tokenID,

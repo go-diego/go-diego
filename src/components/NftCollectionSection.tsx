@@ -8,6 +8,7 @@ import NftGridList, {NftGridListSkeleton} from "./NftGridList";
 import {getAvatar, getWalletAddressFromENS} from "lib/ether";
 import {fetcher} from "lib/helpers";
 import {NFT} from "types";
+import {sortBy} from "lodash";
 
 const ENS = "diegoo.eth";
 
@@ -17,14 +18,28 @@ const NftCollectionSection = () => {
     [ENS, "get-address"],
     getWalletAddressFromENS
   );
-  const {data, error} = useSWR<NFT[]>(`/api/nfts?ens=${ENS}`, fetcher);
+  const {data, error} = useSWR<NFT[]>(`/api/nfts?ens=${ENS}`, fetcher, {});
 
   const isDataLoaded = data && avatarUrl && walletAddress;
+
+  const sortedData = data ? sortBy(data, "tokenSymbol") : [];
+
+  /**
+  * TODO: group by contract address
+  * const nftsByContract = groupBy(transactions, "contractAddress");
+  * get contract info with opensea api
+  * 
+  * let collectionPromises: any = [];
+    Object.keys(nftsByContract).forEach((address) => {
+      collectionPromises.push(getCollection(address));
+    });
+    const collections = await Promise.allSettled(collectionPromises);
+  */
 
   return (
     <Box component="section" py={5}>
       <Typography variant="h5" component="h3" gutterBottom>
-        NFT Collection
+        NFT Gallery
       </Typography>
       <Box py={3}>
         {error && <Typography>Something went wrong loading NFTs 🤔</Typography>}
@@ -42,7 +57,7 @@ const NftCollectionSection = () => {
               address={walletAddress}
             />
             <Box pt={1}>
-              <NftGridList nfts={data} />
+              <NftGridList nfts={sortedData} />
             </Box>
           </>
         )}

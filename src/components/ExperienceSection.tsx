@@ -17,15 +17,29 @@ import {CloudDownload} from "@material-ui/icons";
 
 import clskLogo from "../../public/clsk.png";
 import pcaLogo from "../../public/pca.png";
+import niftyIslandLogo from "../../public/niftyisland.png";
 
 const experience = [
+  {
+    title: "Front-End Engineer",
+    company: "Nifty Island",
+    companyLogo: niftyIslandLogo,
+    startDate: "Mar 2022",
+    endDate: "Present",
+    description: [
+      "Setup testing environment for the front-end team",
+      "Contribute to new component library",
+      "Add new features to web3 app"
+    ],
+    skills: ["TypeScript", "React", "React Testing Library", "web3"]
+  },
   {
     title: "Front-End Engineer",
     company: "CleanSpark",
     companyLogo: clskLogo,
     location: "San Diego, CA ",
     startDate: "Oct 2019",
-    endDate: "Present",
+    endDate: "Mar 2022",
     description: [
       "Build new features and deploy patches to an existing React SPA",
       "Develop strategy for automated unit + integration testing",
@@ -163,11 +177,13 @@ const ExperienceSection = () => {
                   />
                 ))}
               </Box>
-              <ul>
-                {item.description.map((desc, index) => (
-                  <li key={index}>{desc}</li>
-                ))}
-              </ul>
+              {item.description && (
+                <ul>
+                  {item.description.map((desc, index) => (
+                    <li key={index}>{desc}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </Fragment>
         ))}
