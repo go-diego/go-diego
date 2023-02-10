@@ -18,7 +18,7 @@ const HomePage: NextPage = () => {
       <ExperienceSection />
       <EducationSection />
       <ProjectsSection />
-      <NftCollectionSection />
+      {/* <NftCollectionSection /> */}
       <SpotifySection />
     </Container>
   );
