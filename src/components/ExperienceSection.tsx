@@ -16,35 +16,37 @@ import {
 import {CloudDownload} from "@material-ui/icons";
 
 import clskLogo from "../../public/clsk.png";
-import pcaLogo from "../../public/pca.png";
+import espLogo from "../../public/esp.jpg";
 import niftyIslandLogo from "../../public/niftyisland.png";
 
 const experience = [
   {
-    title: "Front-End Engineer",
+    title: "Senior Frontend Engineer",
     company: "Nifty Island",
     companyLogo: niftyIslandLogo,
     startDate: "Mar 2022",
     endDate: "Present",
+    link: "https://niftyisland.com/",
     description: [
-      "Setup testing environment for the front-end team",
-      "Contribute to new component library",
-      "Add new features to web3 app"
+      "Led the successful migration of a custom React app to NextJS, resulting in overall performance increase.",
+      "Designed and implemented comprehensive testing strategies, including unit and e2e tests, resulting in a decrease in regression and production defects and an increase in overall code quality.",
+      "Architected and maintained a component library as a reusable package including tests and Storybook stories.",
+      "Integrated web3-enabled features into an NFT marketplace platform."
     ],
     skills: ["TypeScript", "React", "React Testing Library", "web3"]
   },
   {
-    title: "Front-End Engineer",
+    title: "Senior Frontend Engineer",
     company: "CleanSpark",
     companyLogo: clskLogo,
     location: "San Diego, CA ",
     startDate: "Oct 2019",
     endDate: "Mar 2022",
+    link: "https://www.cleanspark.com/",
     description: [
-      "Build new features and deploy patches to an existing React SPA",
-      "Develop strategy for automated unit + integration testing",
-      "Modernize code base using newest React features and best practices",
-      "Add new features to existing React Native app"
+      "Developed new functionalities and enhanced existing codebase while prioritizing performance considerations for a publicly traded organization.",
+      "Implemented automated testing suite for unit and e2e tests, resulting in increased confidence.",
+      "Updated existing React Native app and helped with deployment process."
     ],
     skills: [
       "TypeScript",
@@ -57,39 +59,19 @@ const experience = [
   },
   {
     title: "Web Developer",
-    company: "Patient Care Analytics",
-    companyLogo: pcaLogo,
+    company: "ESP Personnel",
+    companyLogo: espLogo,
     location: "Thousand Palms, CA ",
     startDate: "Jun 2014",
     endDate: "Oct 2019",
+    link: "https://esppersonnel.com/",
     description: [
-      <>
-        Built and maintained an ASP.NET MVC application using{" "}
-        <code>jQuery</code> and <code>Bootstrap 3</code> on the front-end fed by
-        controllers via <code>SQL</code> stored procedures.
-      </>,
-      <>
-        Built and maintained SPA with <code>AngularJS</code> and{" "}
-        <code>Angular Material</code>. Project consumes REST API endpoints and
-        is built for production and deployed using <code>Gulp</code> and{" "}
-        <code>NodeJS</code>.
-      </>,
-      <>
-        Built and maintained SPA with <code>ReactJS</code> and{" "}
-        <code>Material UI</code>. Project consumes REST API endpoints and is
-        released to production using <code>Create React App</code> and{" "}
-        <code>NodeJS</code> and/or <code>Bash</code> as needed.
-      </>,
-      <>
-        Developed a universal Javascript client library around our REST APIs so
-        that any client can use it. Serves as a data service layer and stands
-        alone in its own repository. Built with <code>ES6</code> classes and
-        bundled as a universal library with <code>Rollup</code>.
-      </>,
-      <>
-        Developed a universal Javascript client library that interfaces with
-        third-party phone system.
-      </>
+      "Developed and maintained a data-reporting web application using C#, SQL, and Bootstrap3.",
+      "Created a front-end staffing suite web application utilizing AngularJS and Angular Material.",
+      "Designed and maintained a profile-based web application for nurses with C#, SQL, and Bootstrap4.",
+      "Enhanced client communication efficiency by integrating ReactJS client profile with the CRM system.",
+      "Developed and maintained client JavaScript libraries for proprietary RESTful APIs.",
+      "Improved call-center productivity by integrating click-to-dial functionality with the phone system."
     ],
     skills: [
       "Rollup",
@@ -128,19 +110,21 @@ const ExperienceSection = () => {
           <Fragment key={`experience-li-${index}`}>
             <ListItem component="div" disableGutters>
               <ListItemAvatar>
-                <Avatar
-                  component={(props) => (
-                    <Box position="relative" {...props} bgcolor="unset">
-                      <Image
-                        placeholder="blur"
-                        layout="fill"
-                        objectFit="cover"
-                        alt={item.company}
-                        src={item.companyLogo}
-                      />
-                    </Box>
-                  )}
-                />
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <Avatar
+                    component={(props) => (
+                      <Box position="relative" {...props} bgcolor="unset">
+                        <Image
+                          placeholder="blur"
+                          layout="fill"
+                          objectFit="cover"
+                          alt={item.company}
+                          src={item.companyLogo}
+                        />
+                      </Box>
+                    )}
+                  />
+                </a>
               </ListItemAvatar>
               <ListItemText
                 primary={item.title}
