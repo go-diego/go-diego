@@ -8,6 +8,7 @@ import EducationSection from "components/EducationSection";
 import ProjectsSection from "components/ProjectsSection";
 import Meta from "components/Meta";
 import NftCollectionSection from "components/NftCollectionSection";
+import VolunteerSection from "components/VolunteerSection";
 
 const HomePage: NextPage = () => {
   const classes = useStyles();
@@ -16,6 +17,7 @@ const HomePage: NextPage = () => {
       <Meta />
       <IntroSection />
       <ExperienceSection />
+      <VolunteerSection />
       <EducationSection />
       <ProjectsSection />
       {/* <NftCollectionSection /> */}

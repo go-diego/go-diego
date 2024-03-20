@@ -70,7 +70,7 @@ const experience = [
       "Created a front-end staffing suite web application utilizing AngularJS and Angular Material.",
       "Designed and maintained a profile-based web application for nurses with C#, SQL, and Bootstrap4.",
       "Enhanced client communication efficiency by integrating ReactJS client profile with the CRM system.",
-      "Developed and maintained client JavaScript libraries for proprietary RESTful APIs.",
+      "Accelerated development processes by creating and managing reusable JavaScript libraries for proprietary RESTful APIs.",
       "Improved call-center productivity by integrating click-to-dial functionality with the phone system."
     ],
     skills: [
